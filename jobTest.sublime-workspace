@@ -1,0 +1,818 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"player",
+				"playersList"
+			],
+			[
+				"is",
+				"isBasicGameOver"
+			],
+			[
+				"p",
+				"println"
+			],
+			[
+				"players",
+				"playersList"
+			],
+			[
+				"print",
+				"println"
+			],
+			[
+				"winn",
+				"winnersBuf"
+			],
+			[
+				"card",
+				"cardNum"
+			],
+			[
+				"drop",
+				"dropPairedCards"
+			],
+			[
+				"JOK",
+				"JOKER2"
+			],
+			[
+				"cardf",
+				"cardface1"
+			],
+			[
+				"play",
+				"players"
+			],
+			[
+				"CARD",
+				"CARDS_NUM"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"background",
+				"background-image"
+			],
+			[
+				"con",
+				"continue"
+			],
+			[
+				"on",
+				"onlineuserP"
+			],
+			[
+				"user",
+				"userP"
+			],
+			[
+				"re",
+				"req"
+			],
+			[
+				"file",
+				"file_size"
+			],
+			[
+				"fre",
+				"free_responds"
+			],
+			[
+				"ini",
+				"init_responds"
+			],
+			[
+				"fp",
+				"fprintf	fprintf …"
+			],
+			[
+				"soc",
+				"socket_fd"
+			],
+			[
+				"free_",
+				"free_onlineuser"
+			],
+			[
+				"get_off",
+				"get_offline_users_by_roomname"
+			],
+			[
+				"get_on",
+				"get_online_users_by_roomname"
+			],
+			[
+				"ex",
+				"exist_file"
+			],
+			[
+				"info",
+				"info_y"
+			],
+			[
+				"A_",
+				"A_REVERSE"
+			],
+			[
+				"init_r",
+				"init_roomnames"
+			],
+			[
+				"res",
+				"reset_input"
+			],
+			[
+				"upl",
+				"upload_file"
+			],
+			[
+				"close",
+				"close_client"
+			],
+			[
+				"rome",
+				"roomnames"
+			],
+			[
+				"room",
+				"roomname"
+			],
+			[
+				"input",
+				"inputbox_col"
+			],
+			[
+				"INPUT",
+				"INPUTBOX_Y"
+			],
+			[
+				"ROOM",
+				"ROOMNAMES_X"
+			],
+			[
+				"UPLO",
+				"UPLOAD_ROW"
+			],
+			[
+				"up",
+				"upload_x"
+			],
+			[
+				"FILE",
+				"FILEPATH_Y"
+			],
+			[
+				"init_in",
+				"init_inputfile"
+			],
+			[
+				"init_",
+				"init_inputbox"
+			],
+			[
+				"y",
+				"y"
+			],
+			[
+				"roomna",
+				"roomnames"
+			],
+			[
+				"create_room",
+				"create_room_border_box"
+			],
+			[
+				"create_",
+				"create_roomnames_box"
+			],
+			[
+				"online",
+				"onlines_y"
+			],
+			[
+				"onlines",
+				"ONLINES_X"
+			],
+			[
+				"ONLINE",
+				"ONLINES_COL"
+			],
+			[
+				"onli",
+				"onlines_row"
+			],
+			[
+				"roomname",
+				"roomnames_y"
+			],
+			[
+				"ROOM_B",
+				"ROOM_BORDER_Y"
+			],
+			[
+				"mvw",
+				"mvwaddstr"
+			],
+			[
+				"C",
+				"CYAN"
+			],
+			[
+				"wa",
+				"wattron"
+			],
+			[
+				"COLO",
+				"COLOR_PAIR"
+			],
+			[
+				"a",
+				"attroff"
+			],
+			[
+				"inputbox",
+				"inputbox_x"
+			],
+			[
+				"UP",
+				"UPLOAD_COL"
+			],
+			[
+				"INFO",
+				"INFO_COL"
+			],
+			[
+				"INFO_2",
+				"INFO_2_Y"
+			],
+			[
+				"title",
+				"titletext"
+			],
+			[
+				"TITLE",
+				"TITLE_ROW"
+			],
+			[
+				"TITL",
+				"TITLE_Y"
+			],
+			[
+				"TIT",
+				"TITLE_ROW"
+			],
+			[
+				"de",
+				"define"
+			],
+			[
+				"t_",
+				"t_cols"
+			],
+			[
+				"tr",
+				"transfer_file"
+			],
+			[
+				"query",
+				"queryfile"
+			],
+			[
+				"recv",
+				"recvIsDone"
+			],
+			[
+				"buf",
+				"buf_len"
+			],
+			[
+				"r",
+				"row"
+			],
+			[
+				"b",
+				"buf"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"serve",
+				"serve_request"
+			],
+			[
+				"conn",
+				"conn_fd"
+			],
+			[
+				"requ",
+				"requestP"
+			],
+			[
+				"server",
+				"server_reply"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"margin-",
+				"margin-left"
+			],
+			[
+				"background-",
+				"background-image"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"back",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 465.0,
+		"last_filter": "Dart: ",
+		"selected_items":
+		[
+			[
+				"Dart: ",
+				"Dart: Stagehand"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 549.0
+	},
+	"console":
+	{
+		"height": 325.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/urchinfinity/jobTest",
+		"/C/urchinfinity/jobTest/web",
+		"/C/urchinfinity/jobTest/web/game_window",
+		"/C/urchinfinity/jobTest/web/game_window/src"
+	],
+	"file_history":
+	[
+		"/C/urchinfinity/jobTest/web/game_window/GameWindow.dart",
+		"/C/urchinfinity/jobTest/web/game_window/src/Map.dart",
+		"/C/urchinfinity/jobTest/web/game_window/src/Dialog.dart",
+		"/C/Users/Urchin/AppData/Roaming/Sublime Text 3/Packages/User/Dart - Plugin Settings.sublime-settings",
+		"/C/Users/Urchin/Desktop/test.dart",
+		"/C/tools/dart-sdk/README",
+		"/C/Users/Urchin/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/Urchin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Urchin/Downloads/shared folder/foop/hw1/PlayGame.java",
+		"/D/article/某天.txt",
+		"/C/Users/Urchin/Downloads/shared folder/foop/hw1/makefile",
+		"/C/Users/Urchin/Downloads/shared folder/foop/hw1/Player.java",
+		"/C/Users/Urchin/Downloads/四下/FOOP/comments.txt",
+		"/C/Users/Urchin/Downloads/script/for_visual_studio.txt",
+		"/C/Users/Urchin/Downloads/shared folder/foop/hw1/User.java",
+		"/C/Users/Urchin/Downloads/四下/FOOP/PlayGame.java",
+		"/D/article/重生之代價by夜嘀.txt",
+		"/D/article/炮灰重生記by李松儒.txt",
+		"/D/article/重生之妖皇為夫by青衣畫墨.txt",
+		"/D/article/溺愛by小薇.txt",
+		"/D/article/神木撓不盡by綠野千鶴.txt",
+		"/D/article/巨星之名器爐鼎by盈澈逝雪.txt",
+		"/D/article/揣著包子虐渣攻by洬.txt",
+		"/D/article/重生之嚴敘by青衍.txt",
+		"/D/article/寵妻之道by尹琊.txt",
+		"/D/article/巨星之名器爐鼎by盈澈逝雪",
+		"/C/Users/Urchin/Downloads/report (1).csv",
+		"/C/Users/Urchin/Downloads/test.txt",
+		"/D/article/穆然by孤君.txt",
+		"/D/article/葉川的夏天by牛角弓.txt",
+		"/D/article/天降福星by碧色微橘.txt",
+		"/D/book/ITCT/note",
+		"/D/article/重生之轉圜by飛殺.txt",
+		"/D/article/系草和校草by輕點.txt",
+		"/D/article/做你的天王之攻成身退 by 欲曉",
+		"/D/article/君策by扶風琉璃.txt",
+		"/D/AE/output/nomonster.srt",
+		"/D/AE/output/monster.srt",
+		"/D/AE/output/run.srt",
+		"/D/AE/output/start.srt",
+		"/C/Users/Urchin/Desktop/readme.txt",
+		"/D/AE/output/subtitle.srt",
+		"/C/Users/Urchin/Downloads/lab/cyy/seamCarving/energy_matrix.txt",
+		"/C/urchinfinity/boeneo/.gitignore",
+		"/C/Users/Urchin/Downloads/lab/cyy/seamCarving/.gitignore",
+		"/C/urchinfinity/gap/.gitignore",
+		"/C/Users/Urchin/Downloads/西洋歌劇史/final/考古題",
+		"/D/book/Computer Networking/hw1/client.c",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/JPEGDecoder/JPEGDecoder/Segment.h",
+		"/C/Users/Urchin/Downloads/ITCT/phw_mpeg/test.cpp",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/image_stitching/image_stitching/CylinProject.cpp",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/image_stitching/image_stitching/main.cpp",
+		"/C/Users/Urchin/Downloads/lab/cyy/seamCarving/matlab.mat",
+		"/D/book/Computer Networking/hw1/client_gui.h",
+		"/C/urchinfinity/LoveMentor/svg.html",
+		"/C/urchinfinity/LoveMentor/liquidFillGauge.js",
+		"/C/urchinfinity/LoveMentor/views/public/javascripts/fb_utils.js",
+		"/C/urchinfinity/LoveMentor/.gitignore",
+		"/C/urchinfinity/LoveMentor/views/index.html",
+		"/C/urchinfinity/liquidFillGauge.js",
+		"/C/urchinfinity/svg.html",
+		"/C/urchinfinity/LoveMentor/views/fb_test.ejs",
+		"/C/urchinfinity/LoveMentor/public/javascripts/fb_utils.js",
+		"/C/urchinfinity/LoveMentor/public/javascripts/index.js",
+		"/C/urchinfinity/LoveMentor/config/mongooseSetup.js",
+		"/C/urchinfinity/LoveMentor/routes/routes.js",
+		"/C/urchinfinity/urchinfinity.github.io/web/js/fb_utils.js",
+		"/C/urchinfinity/urchinfinity.github.io/web/html/question.html",
+		"/C/urchinfinity/urchinfinity.github.io/web/js/parse/parse_client.js",
+		"/C/urchinfinity/fb_utils.js",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/JPEGDecoder/README.txt",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/image_stitching/image_stitching/ImgList.cpp",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/image_stitching/image_stitching/ImgList.h",
+		"/C/Users/Urchin/Downloads/ITCT/phw_jpeg/encoder_jpeg.m",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/image_stitching/readme.txt",
+		"/C/Users/Urchin/Downloads/lab/cyy/seamCarving/seam_carving.m",
+		"/D/matlab/network.lic",
+		"/C/Users/Urchin/Downloads/lab/cyy/seamCarving/gbvs/demo/demonstration.m",
+		"/C/Users/Urchin/Downloads/lab/cyy/seamCarving/gbvs/demo/simplest_demonstration.m",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/SeamCarving/SeamCarving.sdf",
+		"/C/Users/Urchin/Downloads/lab/cyy/seamCarving/energe_func.m",
+		"/C/Users/Urchin/Downloads/VFX/hw2/harris_corner_detector.m",
+		"/C/Users/Urchin/Downloads/VFX/hw2/Ransac.cpp",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/image_stitching/image_stitching/hc_results/feature/HCD3.txt",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/image_stitching/image_stitching/hc_results/feature/HCD8.txt",
+		"/C/Users/Urchin/AppData/Roaming/Skype/My Skype Received Files/blending.cpp",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/image_stitching/image_stitching/inputs/info.txt",
+		"/C/Users/Urchin/AppData/Roaming/Skype/My Skype Received Files/HCD2.txt",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/vfx_hw1/vfx_hw1/alignment.h",
+		"/C/Users/Urchin/Documents/Visual Studio 2012/Projects/vfx_hw1/vfx_hw1/alignment.cpp",
+		"/C/Users/Urchin/Desktop/feedback",
+		"/U/toefl/reading_template",
+		"/C/Users/Urchin/AppData/Roaming/Skype/My Skype Received Files/How to run Tone mapping program",
+		"/F/Matlab/network.lic",
+		"/C/Users/Urchin/Downloads/align.cpp",
+		"/C/Users/Urchin/Downloads/mtb/mtb.cpp",
+		"/C/Users/Urchin/Downloads/boost_1_57_0/boost_1_57_0/INSTALL",
+		"/C/urchinfinity/BaniDecide_release/css/basic.css",
+		"/C/urchinfinity/BaniDecide_release/add_question.html",
+		"/C/urchinfinity/StupidBirdExpress/lib/client/action_dropper.dart",
+		"/C/urchinfinity/BaniDecide_release/index.html",
+		"/C/urchinfinity/BaniDecide_release/question.html",
+		"/D/book/Pattern Recognition/FaceDetection_new/FaceDetection/finalSample/faceDefine.h",
+		"/D/book/Pattern Recognition/FaceDetection_new/FaceDetection/finalSample/ImgList.h",
+		"/D/book/Pattern Recognition/FaceDetection_new/FaceDetection/finalSample/main.cpp",
+		"/D/book/Pattern Recognition/FaceDetection_new/FaceDetection/finalSample/gabor.cpp",
+		"/D/book/Pattern Recognition/FaceDetection_new/FaceDetection/finalSample/exptest.cpp",
+		"/D/book/Pattern Recognition/FaceDetection_new/FaceDetection/finalSample/exptest.h",
+		"/D/book/Pattern Recognition/FaceDetection_new/team07/code/finalSample/ImgList.h",
+		"/D/FaceDetection/finalSample/main.cpp",
+		"/D/book/Pattern Recognition/FaceDetection_new/team07/code/finalSample/ImgList.cpp",
+		"/C/Users/Urchin/Downloads/mess/a mess",
+		"/C/urchinfinity/BaniDecide/BaniDecide/web/html/question.html",
+		"/C/urchinfinity/StupidBirdExpress/.gitignore",
+		"/C/urchinfinity/StupidBirdExpress/lib/parse/StupidBirdExpress/cloud/main.js",
+		"/U/toefl/writing0315",
+		"/C/urchinfinity/StupidBirdExpress/lib/client/field_name.dart",
+		"/C/Users/Urchin/Downloads/Message.json",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/Urchin/Downloads/10857329_10152755176204315_6946629204049980590_o.jpg",
+		"/D/article/妻為上.txt",
+		"/U/boeneo/boeneo/web/webapp/rsp/workspace/workspaceView.rsp.html",
+		"/U/boeneo/boeneo/web/webapp/main.dart",
+		"/C/urchinfinity/BaniDecide/.gitignore",
+		"/C/Users/Urchin/Downloads/testGithubio/index.html",
+		"/C/Users/Urchin/Downloads/testGithubio/a.html",
+		"/C/urchinfinity/testGithubio/index.html",
+		"/C/Users/Urchin/Downloads/test.dart"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			"C:\\Users\\Urchin\\Downloads\\Pattern Recognition\\DeepLearningTutorials"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"remove",
+			"我們都選擇了改變",
+			"system",
+			"int",
+			"j",
+			"outputWinner",
+			"cardsSpliter",
+			"”",
+			"“",
+			"米青",
+			"口今",
+			"口申",
+			"CHAO",
+			"chao",
+			"xing",
+			"女眉",
+			"石更",
+			"身寸",
+			"yin",
+			"RU",
+			"ru",
+			"21",
+			",",
+			"HERE",
+			"□",
+			"只不過",
+			"骰子",
+			"...",
+			",",
+			"’",
+			"‘",
+			",",
+			" ",
+			"”",
+			"“",
+			"T",
+			"t",
+			"T",
+			" ",
+			",",
+			"”",
+			"“",
+			"”",
+			"“",
+			"　　黃昏下，交織著一對幸福的戀人。",
+			"LUO",
+			"luo",
+			"yu",
+			"=",
+			"yu",
+			"yu=",
+			"66",
+			"”",
+			"“",
+			"”",
+			"“",
+			"〞",
+			"　　「真捨不得讓你走，等你出差回來，我大概已經在拉斯維加斯了，又有好長一段時間不能見面了。〞",
+			"〞",
+			"＂",
+			"〞",
+			"。〞",
+			"〞",
+			"＂",
+			"〞",
+			"＞",
+			"＜",
+			"〞",
+			",",
+			"　　",
+			"後",
+			"車駕次第、羽儀導從、甲盾林列，送嫁的隊伍奢華隆重、浩浩蕩蕩，雖然在皇家待遇中屬於次等，可是讓百姓看到，必定還是嘆為觀止。如今的錦王朝頹敗不堪，百姓賦稅苛重、叫苦不迭，而一個不受寵的皇子出嫁都要如此陣仗，當真是朱門酒肉臭，路有凍死骨。",
+			"“",
+			"0.000000",
+			"1e",
+			"0.000260",
+			"0.0002",
+			"0.00026 ",
+			"-6",
+			"comp",
+			"qsort",
+			"PFrame",
+			" p ",
+			"p ",
+			"p f",
+			"type i",
+			"type b",
+			"type p",
+			"type i",
+			"I frame",
+			"\"Block.h",
+			"Macroblock.h",
+			"block.h",
+			"Block.h",
+			"#include \"Block.h\"",
+			"Block.cc",
+			"/Block.cc",
+			"Block.cc",
+			"Block.h",
+			"Frame.h",
+			"Slice.h",
+			"Slice",
+			"Pictures.h",
+			"class BitStream",
+			"dithery.h\"",
+			"dithery.h",
+			"dithery.cc",
+			"class Ditherer",
+			"XOpenDisplay",
+			"Xutil.h",
+			"Xlib.h",
+			"create_roomnames_box",
+			"init_windows",
+			"Window",
+			"CreateWindow",
+			"WINDOW",
+			"create_titlebox",
+			"Window",
+			"class Window",
+			"Window {",
+			"Window ",
+			"Window",
+			"class Window",
+			"class X8MovieWindow",
+			"util.h",
+			"typedef",
+			"uchar",
+			"uchar_t"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.dart.analyzer":
+	{
+		"height": 178.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Dart/Support/Dart.sublime-build",
+	"project": "jobTest.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 280.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
