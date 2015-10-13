@@ -4,7 +4,7 @@ class Level {
 	int _ID;
 	List<String> _dialog;
 	List<Instructure> _before;
-	List<List<Instructure> _after;
+	List<List<Instructure>> _after;
 
 
 	Future run(GameManager gm) {
