@@ -53,16 +53,19 @@ class Dialog {
 		}
 	}
 
-	void startOptionsListener(Function action) {
+	Future<int> startOptionsListener(Function action) {
+		Completer cmpl = new Completer();
+
 		List listeners = new List();
 		ElementList<ParagraphElement> options = querySelectorAll('#dialog .options p');
 		options.forEach((ParagraphElement option) {
 			var listener = option.onClick.listen((e) {
 				listeners.forEach((lstnr) => lstnr.cancel());
-				action(int.parse(option.id));
+				return cmpl.complete(int.parse(option.id));
 			});
 			listeners.add(listener);
 		});
+		return cmpl.future;
 	}
 
 	void playSound(String soundID) {

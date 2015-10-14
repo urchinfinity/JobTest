@@ -85,16 +85,14 @@ class GameMap {
 				case 9:
 					dialog.showOptions(['A 社會學', 'B 微積分', 'C 行政學', 'D 財稅學']);
 					break;
-				default:			
-					dialog.startOptionsListener((int optionID) {
-						print(optionID);
+				default:
+					timer.cancel();			
+					dialog.startOptionsListener()
+					.then((choice) {
+						userChoices.add(choice);
 					});
-					timer.cancel();
 			}
 		});
 	}
 
-	void _startWalking() {
-
-	}
 }
