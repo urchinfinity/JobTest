@@ -63,15 +63,13 @@ class ApplicationContext {
   AudioContext audioCtx;
 
   // An object to track the buffers to load "{name: path}".
-  static const buffersToLoad = const {
-    // There is also example.ogg and example.wav.
-    "choice": AUDIO_CHOICE,
-    "choice1": AUDIO_CHOICE
-  };
+  Map buffersToLoad;
 
-  ApplicationContext() {
+  ApplicationContext(Map inputBuffers) {
     buffers = new Map<String, AudioBuffer>();
     audioCtx = new AudioContext();
+    buffersToLoad = new Map.from(inputBuffers);
+
     _loadBuffers();
   }
 
@@ -81,7 +79,6 @@ class ApplicationContext {
     List<String> paths = buffersToLoad.values.toList();
     var bufferLoader = new BufferLoader(audioCtx, paths, (List<AudioBuffer> bufferList) {
       for (var i = 0; i < bufferList.length; i++) {
-print('loading');
         AudioBuffer buffer = bufferList[i];
         String name = names[i];
         buffers[name] = buffer;
@@ -100,14 +97,13 @@ class AudioPlayer {
   AudioBufferSourceNode _source;
   BiquadFilterNode _filter;
 
-  AudioPlayer(this.appCtx) {
+  AudioPlayer() {
+    appCtx = new ApplicationContext();
   }
 
   void play(String audioName) {
     // Create the source.
     _source = appCtx.audioCtx.createBufferSource();
-print(appCtx.buffers);
-print(audioName);
     _source.buffer = appCtx.buffers[audioName];
 
     // Create the filter.
