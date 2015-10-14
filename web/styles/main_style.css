@@ -31,6 +31,7 @@ body {
 }
 
 #map {
+ 	position: relative;
 	border: 1px solid #000;
 
 	width: 100%;
@@ -40,6 +41,9 @@ body {
 }
 
 #map img {
+	position: absolute;
+	bottom: 1px;
+
 	width: 100%;
 	height: auto;
 	
