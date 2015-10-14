@@ -33,6 +33,8 @@ Thumbs.db
 *.precompiled.js
 *.swp
 *.tmp
+*.docx
+*.pdf
 ~$*.pptx
 ~$*.docx
 ~$*.xlsx
