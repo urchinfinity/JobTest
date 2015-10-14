@@ -23,18 +23,18 @@ class Character {
 	int _curDirection = BACK;
 
 	int get movePixel {
-		int digitNum;
+		return ((window.innerWidth * 3 / 5) / digitNum / 3).ceil();
+	}
+
+	int get digitNum {
 		switch(_mapId) {
 			case 1:
-				digitNum = 39;
-				break;
+				return 39;
 			case 6:
-				digitNum = 30;
-				break;
+				return 30;
 			default:
-				digitNum = 40;
+				return 40;
 		}
-		return ((window.innerWidth * 3 / 5) / digitNum / 3).ceil();
 	}
 
 	void set mapId(int id) {
@@ -45,7 +45,12 @@ class Character {
 		_character = querySelector(characterId);
 	}
 
-	void show(int top, int left) {
+	 void show(int top, int left) {
+	// 	int size = ((window.innerWidth * 3 / 5) / digitNum / 3).ceil();
+	// 	DivElement gameWindow = querySelector("#game-window");
+	// 	int bottom = gameWindow.offsetTop + gameWindow.offsetHeight;
+	// 	_character.style.top = px(bottom - top * size);
+	// 	_character.style.left = px((left - 1) * size);
 		_character.style.top = px(top);
 		_character.style.left = px(left);
 		_character.classes.remove('hidden');

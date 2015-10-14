@@ -31,7 +31,7 @@ class GameMap {
 //		.then((_) => _startStoryline5())
 //		.then((_) => _startStoryline6());
 
-		_startStoryline6();
+		_startStoryline2_1();
 	}
 
 	Future _startBackgroundStory() {
@@ -277,8 +277,8 @@ class GameMap {
 					timer.cancel();
 					startNoteListener()
 					.then((_) => cmpl.complete());
-			}
-		});
+				}
+			});
 		return cmpl.future.then((_){
 			character.turnTo(LEFT);
 			return character.goLeft(9);
