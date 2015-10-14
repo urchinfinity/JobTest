@@ -2,8 +2,8 @@ library Fieldname;
 
 const int TEXT_HEIGHT = 60,
 		  GAME_WINDOW_HEIGHT = 750,
-		  DIALOG_ANIMATION_DURATION = 1000,
-		  DIALOG_TEXT_DURATION = 1500,
+		  DIALOG_ANIMATION_DURATION = 100,
+		  DIALOG_TEXT_DURATION = 150,
 		  STORYLINE_DURATION = 5,
 
           BACKGROUND_1_WIDTH = 32,
@@ -27,17 +27,17 @@ const int TEXT_HEIGHT = 60,
 const double GAME_WINDOW_WIDTH_RATIO = 0.6;
 
 
-const String IMG_STORY = "../../source/background/story.png",
-			 IMG_CLASSROOM_DARK = "../../source/background/01.png",
-			 IMG_CLASSROOM_BRIGHT = "../../source/background/02.png",
-			 IMG_BACKGROUND_1 = "../../source/background/1.png",
-			 IMG_BACKGROUND_2 = "../../source/background/2.png",
-			 IMG_BACKGROUND_3 = "../../source/background/3.png",
-			 IMG_BACKGROUND_4 = "../../source/background/4.png",
-			 IMG_BACKGROUND_5 = "../../source/background/5.png",
-			 IMG_BACKGROUND_6 = "../../source/background/6.png",
+const String IMG_STORY = "../source/background/story.png",
+			 IMG_CLASSROOM_DARK = "../source/background/01.png",
+			 IMG_CLASSROOM_BRIGHT = "../source/background/02.png",
+			 IMG_BACKGROUND_1 = "../source/background/1.png",
+			 IMG_BACKGROUND_2 = "../source/background/2.png",
+			 IMG_BACKGROUND_3 = "../source/background/3.png",
+			 IMG_BACKGROUND_4 = "../source/background/4.png",
+			 IMG_BACKGROUND_5 = "../source/background/5.png",
+			 IMG_BACKGROUND_6 = "../source/background/6.png",
 			 IMG_NO_BACKGROUND = "",
-			 IMG_CHARACTER= "./../source/character/";
+			 IMG_CHARACTER= "../source/character/";
 
 const String AUDIO_CHOICE = "../../source/audio/choice.WAV",
 			 AUDIO_SHOUT = "../../source/audio/shout.wav",

@@ -15,15 +15,15 @@ Dialog dialog = new Dialog();
 void main() {
 	initAudio();
 	new Timer(new Duration(seconds: 1), () {
-		//gameMap.startStory();
+		gameMap.startStory();
 	});
 }
 
 void initAudio() {
-	audioChoice = new AudioPlayer("choice", CHOICE);
-	audioShout = new AudioPlayer("shout", SHOUT);
-	audioIntro = new AudioPlayer("intro", INTRO_BGM);
-	audioBGM = new AudioPlayer("bgm", BGM, true);
-	audioAnthem = new AudioPlayer("anthem", ANTHEM);
-	audioMagic = new AudioPlayer("magic", MAGIC);
+	// audioChoice = new AudioPlayer("choice", CHOICE);
+	// audioShout = new AudioPlayer("shout", SHOUT);
+	// audioIntro = new AudioPlayer("intro", INTRO_BGM);
+	// audioBGM = new AudioPlayer("bgm", BGM, true);
+	// audioAnthem = new AudioPlayer("anthem", ANTHEM);
+	// audioMagic = new AudioPlayer("magic", MAGIC);
 }

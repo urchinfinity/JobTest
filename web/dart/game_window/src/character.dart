@@ -2,19 +2,19 @@ part of GameWindow;
 
 typedef void TimerCallCackFunction(Timer timer);
 
-List<String> STAND = ["b1", "f1", "l1", "r1"];
-List<String> WALK_BACK = ["b1", "b2", "b3"];
-List<String> WALK_FORWARD = ["f1", "f2", "f3"];
-List<String> WALK_LEFT = ["l1", "l2", "l3"];
-List<String> WALK_RIGHT = ["r1", "r2", "r3"];
+List<String> STAND = [".b1", ".f1", ".l1", ".r1"];
+List<String> WALK_BACK = [".b1", ".b2", ".b3"];
+List<String> WALK_FORWARD = [".f1", ".f2", ".f3"];
+List<String> WALK_LEFT = [".l1", ".l2", ".l3"];
+List<String> WALK_RIGHT = [".r1", ".r2", ".r3"];
 
-class CharaterControl {
+class Charater {
 	Completer _cmpl;
 	Timer _timer;
 	TimerCallCackFunction callback;
 	DivElement _character;
 
-	static const Duration PERIODIC = const Duration(milliseconds: 200);
+	static const Duration PERIODIC = const Duration(milliseconds: 50);
 	static const int ONE_MOVE = 3; 
 
 	int _mapId = 1;
@@ -37,7 +37,24 @@ class CharaterControl {
 		return ((window.innerWidth * 3 / 5) / digitNum / 3).ceil();
 	}
 
-	CharaterControl(this._character);
+	void set mapId(int id) {
+		_mapId = id;
+	}
+
+	Charater(String characterId){
+		_character = querySelector(characterId);
+	}
+
+	void show(int top, int left) {
+		_character.style.top = px(top);
+		_character.style.left = px(left);
+		_character.classes.remove('hidden');
+	}
+
+	void hide() {
+		_character.classes.add('hidden');
+	}
+
 
 	Future goBack(int step) {
 		_edge = step * ONE_MOVE;
@@ -63,7 +80,7 @@ class CharaterControl {
 		return _move(callback);
 	}
 
-	void turn(int direction) {
+	void turnTo(int direction) {
 		_character.querySelector(STAND[_curDirection]).classes.add("hidden");
 		_character.querySelector(STAND[direction]).classes.remove("hidden");
 		_curDirection = direction;

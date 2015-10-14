@@ -5,10 +5,14 @@ class GameMap {
 	ImageElement _background;
 	DivElement _character;
 	Dialog dialog;
+	Charater charater;
+	BackgroundController bgCntrl;
 
 	GameMap() {
 		_background = querySelector('#map img');
 		_character = querySelector('#main_character');
+		charater = new Charater('#main_character');
+		bgCntrl = new BackgroundController();
 
 		dialog = new Dialog();
 	}
@@ -16,9 +20,9 @@ class GameMap {
 //	void switchMap(int id) {}
 
 	void startStory() {
-//		_startBackgroundStory()
-//		.then((_) => _startStoryline0())
-		_startStoryline1();
+//		_startBackgroundStory();
+//		.then((_) => _startStoryline0());
+//		_startStoryline1();
 //		.then((_) => _startStoryline1())
 //		.then((_) => _startStoryline2_1())
 //		.then((_) => _startStoryline2_2())
@@ -26,13 +30,15 @@ class GameMap {
 //		.then((_) => _startStoryline4())
 //		.then((_) => _startStoryline5())
 //		.then((_) => _startStoryline6());
+
+		_startStoryline3();
 	}
 
 	Future _startBackgroundStory() {
 		Completer cmpl = new Completer();
 
 		_background.src = IMG_STORY;
-		audioIntro.play();
+		//audioIntro.play();
 
 		ElementList<ParagraphElement> storyLines = querySelectorAll('#map .content p');
 		int curP = 0;
@@ -46,7 +52,7 @@ class GameMap {
 				_background.src = IMG_NO_BACKGROUND;
 				querySelector('#map .content').classes.add('hidden');
 				timer.cancel();
-				audioIntro.stop();
+				//audioIntro.stop();
 				return cmpl.complete();
 			}
 			curP++;
@@ -118,7 +124,6 @@ class GameMap {
 		Completer cmpl = new Completer();
 		int curP = 0;
 		Timer timer;
-
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
@@ -130,34 +135,65 @@ class GameMap {
 					break;
 				case 2:
 					_background.src = IMG_BACKGROUND_1;
+					charater.show(650, 430);
 					_background.classes.remove('blur');
 					break;
 				case 3:
 					break;
-				case 4:
+				default:
+					timer.cancel();
+					cmpl.complete();
+			}
+		});
+		return cmpl.future.then((_) {
+			return charater.goBack(2);
+		}).then((_) {
+			Completer cmpl = new Completer();
+			int curP = 0;
+			Timer timer;
+			timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
+				switch (curP++) {
+				case 0:
 					dialog.showDialog(4);
 					break;
-				case 5:
+				case 1:
 					dialog.showContent('１１月１４日晚上五點半到九點');
 					break;
-				case 6:
+				case 2:
 					dialog.showContent('在椰林大道有學生會文化部辦的 我就尬藝你市集 喔～');
 					break;
-				case 7:
+				case 3:
 					dialog.showContent('就在大富翁下午場結束後。');
 					break;
-				case 8:
-					audioShout.play();
-					break;
-				case 9:
-					break;
-				case 10:
-					break;
-				case 11:
+				case 4:
 					dialog.clearDialog();
+					dialog.hideDialog();
+					break;
+				default:
+					timer.cancel();
+					cmpl.complete();
+				}
+			});
+			return cmpl.future;
+		}).then((_){
+			charater.turnTo(LEFT);
+			return charater.goLeft(1);
+		}).then((_){
+			charater.turnTo(BACK);
+			return charater.goBack(15);
+		}).then((_) {
+			Completer cmpl = new Completer();
+			int curP = 0;
+			Timer timer;
+			timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
+				switch (curP++) {
+				case 0:
+					dialog.showDialog(4);
+					break;
+				case 1:
 					dialog.showContent('左方道路突然傳來尖叫聲');
 					break;
-				case 12:
+				case 2:
 					dialog.showContent('我要往');
 					break;
 				default:
@@ -171,17 +207,44 @@ class GameMap {
 						dialog.hideDialog();
 						//mapPosLander()
 						//.then((_) => cmpl.complete());
-						cmpl.complete();
+						cmpl.complete(choice);
 					});
+				}
+			});
+			return cmpl.future;
+		}).then((choice) {
+			switch(choice) {
+				case 0:
+					return _startStoryline1Result0();
+				case 1:
+					return _startStoryline1Result1();
 			}
+
 		});
-		return cmpl.future;
+	}
+
+	Future _startStoryline1Result0() {
+		charater.turnTo(LEFT);
+		return charater.goLeft(14).then((_) {
+			charater.turnTo(BACK);
+			return charater.goBack(10);
+		}).then((_) => charater.hide());
+	}
+
+
+	Future _startStoryline1Result1() {
+		charater.turnTo(RIGHT);
+		return charater.goRight(15).then((_) {
+			charater.turnTo(BACK);
+			return charater.goBack(10);
+		}).then((_) => charater.hide());
 	}
 
 	Future _startStoryline2_1() {
 		Completer cmpl = new Completer();
 		int curP = 0;
 		Timer timer;
+		charater.mapId = 2;
 
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
@@ -190,6 +253,7 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_2;
+					charater.show(620, 635);
 					break;
 				case 2:
 					dialog.showDialog(4);
@@ -212,12 +276,17 @@ class GameMap {
 					break;
 				default:
 					timer.cancel();
-					
 					startNoteListener()
 					.then((_) => cmpl.complete());
 			}
 		});
-		return cmpl.future;
+		return cmpl.future.then((_){
+			charater.turnTo(LEFT);
+			return charater.goLeft(9);
+		}).then((_){
+			charater.turnTo(BACK);
+			return charater.goBack(10);
+		});
 	}
 
 	Future startNoteListener() {
@@ -252,11 +321,41 @@ class GameMap {
 						userChoices.add(choice);
 						dialog.clearDialog();
 						dialog.hideDialog();
-						return cmpl.complete();
+						return cmpl.complete(choice);
 					});
 			}
 		});
-		return cmpl.future;
+		return cmpl.future.then((choice) {
+			switch(choice) {
+				case 0:
+					return _startStoryline2Result0();
+				case 1:
+					return _startStoryline2Result1();
+			}
+		});
+	}
+
+	Future _startStoryline2Result0() {
+		charater.turnTo(LEFT);
+		return charater.goLeft(15).then((_) {
+			charater.turnTo(BACK);
+			return charater.goBack(16);
+		}).then((_) {
+			charater.turnTo(RIGHT);
+			return charater.goRight(1);
+		}).then((_) => charater.hide());
+	}
+
+
+	Future _startStoryline2Result1() {
+		charater.turnTo(RIGHT);
+		return charater.goRight(16).then((_) {
+			charater.turnTo(BACK);
+			return charater.goBack(16);
+		}).then((_) {
+			charater.turnTo(LEFT);
+			return charater.goLeft(1);
+		}).then((_) => charater.hide());
 	}
 
 	Future _startStoryline3() {
@@ -271,6 +370,7 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_3;
+					charater.show(700, 800);
 					break;
 				case 2:
 					dialog.showDialog(3);
@@ -527,7 +627,6 @@ class GameMap {
 		Completer cmpl = new Completer();
 		Timer timer;
 print('height' + _background.style.width);
-		int curTop = _background.style.height - BACKGROUND_HEIGHT;
 		timer = new Timer.periodic(new Duration(milliseconds: 50), (_) {
 			if (curTop == 1) {
 				timer.cancel();
