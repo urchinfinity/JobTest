@@ -18,7 +18,7 @@ class GameMap {
 	void startStory() {
 //		_startBackgroundStory()
 //		.then((_) => _startStoryline0())
-//		_startStoryline0()
+		_startStoryline1();
 //		.then((_) => _startStoryline1())
 //		.then((_) => _startStoryline2_1())
 //		.then((_) => _startStoryline2_2())
@@ -169,7 +169,9 @@ class GameMap {
 						userChoices.add(choice);
 						dialog.clearDialog();
 						dialog.hideDialog();
-						return cmpl.complete();
+						//mapPosLander()
+						//.then((_) => cmpl.complete());
+						cmpl.complete();
 					});
 			}
 		});
@@ -519,5 +521,22 @@ class GameMap {
 					break;
 			}
 		});
+	}
+
+	Future mapPosLander() {
+		Completer cmpl = new Completer();
+		Timer timer;
+print('height' + _background.style.width);
+		int curTop = _background.style.height - BACKGROUND_HEIGHT;
+		timer = new Timer.periodic(new Duration(milliseconds: 50), (_) {
+			if (curTop == 1) {
+				timer.cancel();
+				return cmpl.complete();
+			} else {
+				curTop = curTop - 5 < 1 ? 1 : curTop - 5;
+				_background.style.top = '${curTop}px';
+			}
+		});
+		return cmpl.future;
 	}
 }
