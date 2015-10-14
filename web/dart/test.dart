@@ -15,7 +15,7 @@ Dialog dialog = new Dialog();
 void main() {
 	initAudio();
 	new Timer(new Duration(seconds: 1), () {
-		gameMap.startStory();
+		//gameMap.startStory();
 	});
 }
 
