@@ -33,4 +33,4 @@ final Map CHOICE = {"choice": AUDIO_CHOICE},
 		  ANTHEM = {"anthem": AUDIO_ANTHEM},
 		  MAGIC = {"magic": AUDIO_MAGIC};
 
-List<int> userChoices = new List(3);
+List<int> userChoices = new List();

@@ -13,16 +13,20 @@ class GameMap {
 		dialog = new Dialog();
 	}
 
-	void switchMap(int id) {
-	}
+//	void switchMap(int id) {}
 
 	void startStory() {
-		//_startBackgroundStory();
-		_startStoryline0();
+//		_startBackgroundStory()
+//		.then((_) => _startStoryline0());
+_startStoryline0();
 	}
 
-	void _startBackgroundStory() {
+	Future _startBackgroundStory() {
+		Completer cmpl = new Completer();
+
 		_background.src = IMG_STORY;
+		audioIntro.play();
+
 		ElementList<ParagraphElement> storyLines = querySelectorAll('#map .content p');
 		int curP = 0;
 		Timer timer;
@@ -35,18 +39,22 @@ class GameMap {
 				_background.src = IMG_NO_BACKGROUND;
 				querySelector('#map .content').classes.add('hidden');
 				timer.cancel();
-		
-				_startStoryline0();
+				audioIntro.stop();
+				return cmpl.complete();
 			}
 			curP++;
 		});
+
+		return cmpl.future;
 	}
 
-	void _startStoryline0() {
+	Future _startStoryline0() {
+		Completer cmpl = new Completer();
 		int curP = 0;
 		Timer timer;
 
 		_background.src = IMG_CLASSROOM_DARK;
+		audioBGM.play();
 		dialog.showDialog(2);
 
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
@@ -82,17 +90,20 @@ class GameMap {
 				case 8:
 					dialog.showContent('印象中…這堂課是');
 					break;
-				case 9:
-					dialog.showOptions(['A 社會學', 'B 微積分', 'C 行政學', 'D 財稅學']);
-					break;
 				default:
-					timer.cancel();			
+					timer.cancel();	
+					
+					dialog.showOptions(['A 社會學', 'B 微積分', 'C 行政學', 'D 財稅學']);
 					dialog.startOptionsListener()
 					.then((choice) {
 						userChoices.add(choice);
+						dialog.clearDialog();
+						dialog.hideDialog();
+						return cmpl.complete();
 					});
 			}
 		});
+		return cmpl.future;
 	}
 
 }

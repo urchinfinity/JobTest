@@ -53,13 +53,14 @@ class Dialog {
 		}
 	}
 
-	Future<int> startOptionsListener(Function action) {
+	Future<int> startOptionsListener() {
 		Completer cmpl = new Completer();
 
 		List listeners = new List();
 		ElementList<ParagraphElement> options = querySelectorAll('#dialog .options p');
 		options.forEach((ParagraphElement option) {
 			var listener = option.onClick.listen((e) {
+				audioChoice.play();
 				listeners.forEach((lstnr) => lstnr.cancel());
 				return cmpl.complete(int.parse(option.id));
 			});
