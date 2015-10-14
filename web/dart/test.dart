@@ -7,16 +7,22 @@ import 'dart:async';
 import 'dart:web_audio';
 
 import 'game_window/GameWindow.dart';
+import 'game_window/Fieldname.dart';
 
 GameMap gameMap = new GameMap();
 Dialog dialog = new Dialog();
 
 void main() {
-	//AudioPlayer player = new AudioPlayer(new ApplicationContext());
-	AudioPlayer player = new AudioPlayer();
-	new Timer.periodic(new Duration(seconds: 1), (_) {
-		player.play('magic');
-//		player.play('shout');
-	});
+	initAudio();
+
 	//gameMap.startStory();
+}
+
+void initAudio() {
+	audioChoice = new AudioPlayer("choice", CHOICE);
+	audioShout = new AudioPlayer("shout", SHOUT);
+	audioIntro = new AudioPlayer("intro", INTRO_BGM);
+	audioBGM = new AudioPlayer("bgm", BGM);
+	audioAnthem = new AudioPlayer("anthem", ANTHEM);
+	audioMagic = new AudioPlayer("magic", MAGIC);
 }

@@ -20,10 +20,10 @@ const String IMG_STORY = "../../source/background/story.png",
 			 IMG_CHARACTER= "./../source/character/";
 
 const String AUDIO_CHOICE = "../../source/audio/choice.WAV",
-			 AUDIO_SHOUT = "../../source/audio/shout.mp3",
-			 AUDIO_INTRO_BGM = "../../source/audio/intro_bgm.mp3",
-			 AUDIO_BGM = "../../source/audio/bgm.mp3",
-			 AUDIO_ANTHEM = "../../source/audio/anthem.mp3",
+			 AUDIO_SHOUT = "../../source/audio/shout.wav",
+			 AUDIO_INTRO_BGM = "../../source/audio/intro_bgm.wav",
+			 AUDIO_BGM = "../../source/audio/bgm.wav",
+			 AUDIO_ANTHEM = "../../source/audio/anthem.wav",
 			 AUDIO_MAGIC = "../../source/audio/magic.WAV";
 
 final Map CHOICE = {"choice": AUDIO_CHOICE},

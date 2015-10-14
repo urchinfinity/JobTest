@@ -69,7 +69,6 @@ class ApplicationContext {
     buffers = new Map<String, AudioBuffer>();
     audioCtx = new AudioContext();
     buffersToLoad = new Map.from(inputBuffers);
-
     _loadBuffers();
   }
 
@@ -90,18 +89,16 @@ class ApplicationContext {
 
 class AudioPlayer {
   final _FREQ = 5000;
-  final _FREQ_MUL = 7000;
-  final _QUAL_MUL = 30;
-  bool _playing = false;
   ApplicationContext appCtx;
   AudioBufferSourceNode _source;
   BiquadFilterNode _filter;
+  String audioName;
 
-  AudioPlayer() {
-    appCtx = new ApplicationContext();
+  AudioPlayer(this.audioName, Map inputBuffers) {
+    appCtx = new ApplicationContext(inputBuffers);
   }
 
-  void play(String audioName) {
+  void play() {
     // Create the source.
     _source = appCtx.audioCtx.createBufferSource();
     _source.buffer = appCtx.buffers[audioName];
