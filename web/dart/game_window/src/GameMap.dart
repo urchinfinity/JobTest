@@ -17,15 +17,15 @@ class GameMap {
 
 	void startStory() {
 //		_startBackgroundStory()
-//		.then((_) => _startStoryline0());
+//		.then((_) => _startStoryline0())
 //		_startStoryline0()
 //		.then((_) => _startStoryline1())
 //		.then((_) => _startStoryline2_1())
 //		.then((_) => _startStoryline2_2())
 //		.then((_) => _startStoryline3())
 //		.then((_) => _startStoryline4())
-//		.then((_) => _startStoryline5());
-_startStoryline1();
+//		.then((_) => _startStoryline5())
+//		.then((_) => _startStoryline6());
 	}
 
 	Future _startBackgroundStory() {
@@ -388,7 +388,6 @@ _startStoryline1();
 		return cmpl.future;
 	}
 
-
 	Future _startStoryline5() {
 		Completer cmpl = new Completer();
 		int curP = 0;
@@ -451,5 +450,74 @@ _startStoryline1();
 			}
 		});
 		return cmpl.future;
+	}
+
+	void _startStoryline6() {
+		int curP = 0;
+		Timer timer;
+
+		audioBGM.stop();
+		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
+			switch (curP++) {
+				case 0:
+					_background.src = IMG_NO_BACKGROUND;
+					audioMagic.play();
+					break;
+				case 1:
+					_background.src = IMG_BACKGROUND_6;
+					audioAnthem.play();
+					break;
+				case 2:
+					dialog.showDialog(3);
+					break;
+				case 3:
+					dialog.showContent('恭喜你完成了湊熱鬧職業性向測驗，');
+					break;
+				case 4:
+					dialog.showContent('依照剛剛的選擇，你最適合的職業是 _ _ _ ');
+					break;
+				case 5:
+					dialog.showContent('推薦你去學生會 _ _ _ 面試看看，有 87% 的機率會被錄取。');
+					break;
+				case 6:
+					dialog.showDialog(9);
+					dialog.showContent('--');
+					break;
+				case 7:
+					dialog.showContent('如果想成為大富翁，記得在報名後確認隊長信箱有無收到認證信，');
+					break;
+				case 8:
+					dialog.showContent('並於 10/26~10/28 到活大 237 繳費換取執照，逾期將取消你的職業資格。');
+					break;
+				case 9:
+					dialog.showContent('11/14 記得到集合地點參加就職典禮。');
+					break;
+				case 10:
+					dialog.showContent('成為大富翁後別吝嗇到椰林大道去逛逛「我就尬藝你」市集，');
+					break;
+				case 11:
+					dialog.showContent('拿著你賺到的大把鈔票買下整條街！');
+					break;
+				case 12:
+					break;
+				case 13:
+					break;
+				case 14:
+					dialog.clearDialog();
+					dialog.showDialog(6);
+					break;
+				case 15:
+					dialog.showContent('台大學生會 87 週年校慶，歡迎你一起來湊！熱！鬧！');
+					break;
+				default:
+					timer.cancel();
+					dialog.showContent('11/9~11/20 刮亮臺大');
+					dialog.showContent('11/14 09:00~17:30 臺大大富翁');
+					dialog.showContent('11/14 14:00~17:00 彩繪椰林大道');
+					dialog.showContent('11/14 17:30~21:00 我就尬藝你');
+					dialog.showContent('11/14 21:30~無極限!!! 臺大之夜');
+					break;
+			}
+		});
 	}
 }
