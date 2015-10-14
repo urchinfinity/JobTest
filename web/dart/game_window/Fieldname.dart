@@ -13,4 +13,6 @@ const String IMG_STORY = "../../source/background/story.png",
 			 IMG_CLASSROOM_BRIGHT = "../../source/background/02.png",
 			 IMG_NO_BACKGROUND = "";
 
-List<int> userOptions = new List(3);
+const String AUDIO_CHOICE = "../../source/audio/choice.WAV";
+
+List<int> userChoices = new List(3);

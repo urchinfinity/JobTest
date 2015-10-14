@@ -13,5 +13,9 @@ GameMap gameMap = new GameMap();
 Dialog dialog = new Dialog();
 
 void main() {
-	gameMap.startStory();
+	AudioPlayer player = new AudioPlayer(new ApplicationContext());
+	new Timer(new Duration(seconds: 5), () {
+		player.play('choice');
+	});
+	//gameMap.startStory();
 }

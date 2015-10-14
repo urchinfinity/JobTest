@@ -14,6 +14,7 @@ dependencies:
   sass: '>=0.4.0 <0.5.0'
   dart_to_js_script_rewriter: '^0.1.0'
   route_hierarchical: '>=0.5.0 <0.7.0'
+  html5lib: any
 
 transformers:
 - dart_to_js_script_rewriter
