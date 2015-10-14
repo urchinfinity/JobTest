@@ -10,3 +10,4 @@ import 'Fieldname.dart';
 part 'src/Dialog.dart';
 part 'src/GameMap.dart';
 part 'src/GameAudio.dart';
+part 'src/character.dart';
