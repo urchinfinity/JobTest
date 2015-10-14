@@ -8,7 +8,7 @@ List<String> WALK_FORWARD = [".f1", ".f2", ".f3"];
 List<String> WALK_LEFT = [".l1", ".l2", ".l3"];
 List<String> WALK_RIGHT = [".r1", ".r2", ".r3"];
 
-class Charater {
+class Character {
 	Completer _cmpl;
 	Timer _timer;
 	TimerCallCackFunction callback;
@@ -41,7 +41,7 @@ class Charater {
 		_mapId = id;
 	}
 
-	Charater(String characterId){
+	Character(String characterId){
 		_character = querySelector(characterId);
 	}
 
@@ -81,10 +81,11 @@ class Charater {
 	}
 
 	void turnTo(int direction) {
+		print("trun from : ${STAND[_curDirection]}");
+		print("trun To : ${STAND[direction]}");
 		_character.querySelector(STAND[_curDirection]).classes.add("hidden");
 		_character.querySelector(STAND[direction]).classes.remove("hidden");
 		_curDirection = direction;
-
 	}
 
 	Future _move(TimerCallCackFunction callback) {

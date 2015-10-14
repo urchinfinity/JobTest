@@ -5,13 +5,13 @@ class GameMap {
 	ImageElement _background;
 	DivElement _character;
 	Dialog dialog;
-	Charater charater;
+	Character character;
 	BackgroundController bgCntrl;
 
 	GameMap() {
 		_background = querySelector('#map img');
 		_character = querySelector('#main_character');
-		charater = new Charater('#main_character');
+		character = new Character('#main_character');
 		bgCntrl = new BackgroundController();
 
 		dialog = new Dialog();
@@ -31,7 +31,7 @@ class GameMap {
 //		.then((_) => _startStoryline5())
 //		.then((_) => _startStoryline6());
 
-		_startStoryline3();
+		_startStoryline4();
 	}
 
 	Future _startBackgroundStory() {
@@ -135,7 +135,7 @@ class GameMap {
 					break;
 				case 2:
 					_background.src = IMG_BACKGROUND_1;
-					charater.show(650, 430);
+					character.show(650, 430);
 					_background.classes.remove('blur');
 					break;
 				case 3:
@@ -146,7 +146,7 @@ class GameMap {
 			}
 		});
 		return cmpl.future.then((_) {
-			return charater.goBack(2);
+			return character.goBack(2);
 		}).then((_) {
 			Completer cmpl = new Completer();
 			int curP = 0;
@@ -176,11 +176,11 @@ class GameMap {
 			});
 			return cmpl.future;
 		}).then((_){
-			charater.turnTo(LEFT);
-			return charater.goLeft(1);
+			character.turnTo(LEFT);
+			return character.goLeft(1);
 		}).then((_){
-			charater.turnTo(BACK);
-			return charater.goBack(15);
+			character.turnTo(BACK);
+			return character.goBack(15);
 		}).then((_) {
 			Completer cmpl = new Completer();
 			int curP = 0;
@@ -219,32 +219,31 @@ class GameMap {
 				case 1:
 					return _startStoryline1Result1();
 			}
-
 		});
 	}
 
 	Future _startStoryline1Result0() {
-		charater.turnTo(LEFT);
-		return charater.goLeft(14).then((_) {
-			charater.turnTo(BACK);
-			return charater.goBack(10);
-		}).then((_) => charater.hide());
+		character.turnTo(LEFT);
+		return character.goLeft(14).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(10);
+		}).then((_) => character.hide());
 	}
 
 
 	Future _startStoryline1Result1() {
-		charater.turnTo(RIGHT);
-		return charater.goRight(15).then((_) {
-			charater.turnTo(BACK);
-			return charater.goBack(10);
-		}).then((_) => charater.hide());
+		character.turnTo(RIGHT);
+		return character.goRight(15).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(10);
+		}).then((_) => character.hide());
 	}
 
 	Future _startStoryline2_1() {
 		Completer cmpl = new Completer();
 		int curP = 0;
 		Timer timer;
-		charater.mapId = 2;
+		character.mapId = 2;
 
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
@@ -253,7 +252,7 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_2;
-					charater.show(620, 635);
+					character.show(620, 635);
 					break;
 				case 2:
 					dialog.showDialog(4);
@@ -281,11 +280,11 @@ class GameMap {
 			}
 		});
 		return cmpl.future.then((_){
-			charater.turnTo(LEFT);
-			return charater.goLeft(9);
+			character.turnTo(LEFT);
+			return character.goLeft(9);
 		}).then((_){
-			charater.turnTo(BACK);
-			return charater.goBack(10);
+			character.turnTo(BACK);
+			return character.goBack(10);
 		});
 	}
 
@@ -336,33 +335,33 @@ class GameMap {
 	}
 
 	Future _startStoryline2Result0() {
-		charater.turnTo(LEFT);
-		return charater.goLeft(15).then((_) {
-			charater.turnTo(BACK);
-			return charater.goBack(16);
+		character.turnTo(LEFT);
+		return character.goLeft(15).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(16);
 		}).then((_) {
-			charater.turnTo(RIGHT);
-			return charater.goRight(1);
-		}).then((_) => charater.hide());
+			character.turnTo(RIGHT);
+			return character.goRight(1);
+		}).then((_) => character.hide());
 	}
 
 
 	Future _startStoryline2Result1() {
-		charater.turnTo(RIGHT);
-		return charater.goRight(16).then((_) {
-			charater.turnTo(BACK);
-			return charater.goBack(16);
+		character.turnTo(RIGHT);
+		return character.goRight(16).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(16);
 		}).then((_) {
-			charater.turnTo(LEFT);
-			return charater.goLeft(1);
-		}).then((_) => charater.hide());
+			character.turnTo(LEFT);
+			return character.goLeft(1);
+		}).then((_) => character.hide());
 	}
 
 	Future _startStoryline3() {
 		Completer cmpl = new Completer();
 		int curP = 0;
 		Timer timer;
-
+		character._mapId = 3;
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
@@ -370,7 +369,8 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_3;
-					charater.show(700, 800);
+					character.show(640, 510);
+					character.turnTo(BACK);
 					break;
 				case 2:
 					dialog.showDialog(3);
@@ -384,34 +384,65 @@ class GameMap {
 				case 5:
 					dialog.showContent('期中考周讀累了可以去刮兩下舒解壓力～');
 					break;
-				case 6:
+				default:
+					dialog.clearDialog();
+					dialog.hideDialog();
+					timer.cancel();
+					cmpl.complete();
+				}
+			});
+		return cmpl.future.then((_){
+			character.turnTo(LEFT);
+			return character.goLeft(6);
+		}).then((_){
+			character.turnTo(BACK);
+			return character.goBack(3);
+		}).then((_) {
+			Completer cmpl = new Completer();
+			int curP = 0;
+			Timer timer;
+			timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
+				switch (curP++) {
+				case 0:
 					dialog.clearDialog();
 					dialog.showDialog(3);
 					break;
-				case 7:
+				case 1:
 					dialog.showContent('每週三四五中午都可以去 活大237 學生會辦繳會費喔～');
 					break;
-				case 8:
+				case 2:
 					dialog.showContent('一學期只要超低價 150 元，在各種報名活動中還可享有優惠價！');
 					break;
-				case 9:
+				default:
 					dialog.clearDialog();
 					dialog.hideDialog();
-					break;
-				case 10:
-					// TODO: WALKING
-					break;
-				case 11:
+					timer.cancel();
+					cmpl.complete();
+				}
+			});
+			return cmpl.future;
+		}).then((_) {
+			character.turnTo(RIGHT);
+			return character.goRight(1);
+		}).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(9);
+		}).then((_) {
+			Completer cmpl = new Completer();
+			int curP = 0;
+			Timer timer;
+			timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
+				switch (curP++) {
+				case 0:
+					dialog.clearDialog();
 					dialog.showDialog(2);
 					dialog.showContent('搞屁啊什麼爛設定？出現了一條河卻找不到橋...');
 					break;
-				case 12:
-					break;
-				case 13:
+				case 1:
 					dialog.clearDialog();
 					dialog.showDialog(5);
 					break;
-				case 14:
+				case 2:
 					dialog.showContent('好吧不然我勉強一下');
 					break;
 				default:
@@ -423,11 +454,12 @@ class GameMap {
 						userChoices.add(choice);
 						dialog.clearDialog();
 						dialog.hideDialog();
-						return cmpl.complete();
+						return cmpl.complete(choice);
 					});
-			}
-		});
-		return cmpl.future;
+				}
+			});
+			return cmpl.future;
+		}).then((choice) => character.goBack(11)).then((_){character.hide();});
 	}
 
 
@@ -443,6 +475,7 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_4;
+					character.show(640, 440);
 					break;
 				case 2:
 					dialog.showDialog(2);
@@ -487,7 +520,18 @@ class GameMap {
 					});
 			}
 		});
-		return cmpl.future;
+		return cmpl.future.then((_) {
+			character.turnTo(LEFT);
+			return character.goLeft(3);
+		}).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(2);
+		}).then((_) {
+			character.turnTo(LEFT);
+			return character.goLeft(15);
+		}).then((_) {
+			character.hide();
+		});
 	}
 
 	Future _startStoryline5() {
