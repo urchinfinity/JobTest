@@ -51,8 +51,13 @@ class Character {
 		_character.classes.remove('hidden');
 	}
 
-	void hide() {
-		_character.classes.add('hidden');
+	Future hide() {
+		_cmpl = new Completer();
+		_timer = new Timer(PERIODIC * 3, () {
+			_character.classes.add('hidden');
+			_cmpl.complete();
+		});
+		return _cmpl.future;
 	}
 
 
@@ -81,8 +86,6 @@ class Character {
 	}
 
 	void turnTo(int direction) {
-		print("trun from : ${STAND[_curDirection]}");
-		print("trun To : ${STAND[direction]}");
 		_character.querySelector(STAND[_curDirection]).classes.add("hidden");
 		_character.querySelector(STAND[direction]).classes.remove("hidden");
 		_curDirection = direction;

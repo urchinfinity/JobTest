@@ -31,7 +31,7 @@ class GameMap {
 //		.then((_) => _startStoryline5())
 //		.then((_) => _startStoryline6());
 
-		_startStoryline4();
+		_startStoryline6();
 	}
 
 	Future _startBackgroundStory() {
@@ -530,7 +530,7 @@ class GameMap {
 			character.turnTo(LEFT);
 			return character.goLeft(15);
 		}).then((_) {
-			character.hide();
+			return character.hide();
 		});
 	}
 
@@ -538,7 +538,7 @@ class GameMap {
 		Completer cmpl = new Completer();
 		int curP = 0;
 		Timer timer;
-
+		character.mapId = 5;
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
@@ -546,6 +546,8 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_5;
+					character.show(680, 405);
+					character.turnTo(BACK);
 					break;
 				case 2:
 					dialog.showDialog(3);
@@ -559,26 +561,39 @@ class GameMap {
 				case 5:
 					dialog.showContent('也別忘了到花火的粉絲專頁按讚支持！');
 					break;
-				case 6:
+				default:
 					dialog.clearDialog();
 					dialog.hideDialog();
-					break;
-				case 7:
-					// TODO: WALKING
-					break;
-				case 8:
+					timer.cancel();
+					cmpl.complete();
+				}
+			});
+		return cmpl.future.then((_){
+			character.turnTo(LEFT);
+			return character.goLeft(1);
+		}).then((_){
+			character.turnTo(BACK);
+			return character.goBack(6);
+		}).then((_) {
+			Completer cmpl = new Completer();
+			int curP = 0;
+			Timer timer;
+			timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
+				switch (curP++) {
+				case 0:
+					dialog.clearDialog();
 					dialog.showDialog(4);
 					break;
-				case 9:
+				case 1:
 					dialog.showContent('什麼？這什麼鬼地方啊！');
 					break;
-				case 10:
+				case 2:
 					dialog.showContent('草原突然分成三個世界，');
 					break;
-				case 11:
+				case 3:
 					dialog.showContent('左邊是是黃沙滾滾的沙漠，中間聳立起一座高山，右邊是一整片的黑森林？！');
 					break;
-				case 12:
+				case 4:
 					dialog.clearDialog();
 					dialog.showContent('要往哪邊去呢...');
 					break;
@@ -591,27 +606,73 @@ class GameMap {
 						userChoices.add(choice);
 						dialog.clearDialog();
 						dialog.hideDialog();
-						return cmpl.complete();
+						return cmpl.complete(choice);
 					});
+				}
+			});
+			return cmpl.future;
+		}).then((choice) {
+			switch(choice) {
+				case 0:
+					return _startStoryline5Result0();
+				case 1:
+					return _startStoryline5Result1();
+				case 2:
+					return _startStoryline5Result2();
 			}
 		});
-		return cmpl.future;
+	}
+
+	Future _startStoryline5Result0() {
+		character.turnTo(LEFT);
+		return character.goLeft(7).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(7);
+		}).then((_) {
+			character.turnTo(LEFT);
+			return character.goLeft(5);
+		}).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(11);
+		}).then((_) {
+			return character.hide();
+		});
+	}	
+
+	Future _startStoryline5Result1() {
+		return character.goBack(18).then((_) => character.hide());	
+	}
+
+	Future _startStoryline5Result2() {
+		character.turnTo(RIGHT);
+		return character.goRight(9).then((_) {
+			character.turnTo(BACK);
+			return character.goBack(7);
+		}).then((_) {
+			character.turnTo(RIGHT);
+			return character.goRight(4);
+		}).then((_) {
+			return character.hide();
+		});
 	}
 
 	void _startStoryline6() {
 		int curP = 0;
 		Timer timer;
+		character.mapId = 5;
 
-		audioBGM.stop();
+		//audioBGM.stop();
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
 					_background.src = IMG_NO_BACKGROUND;
-					audioMagic.play();
+					//audioMagic.play();
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_6;
-					audioAnthem.play();
+					character.show(420, 410);
+					character.turnTo(FORWARD);
+					//audioAnthem.play();
 					break;
 				case 2:
 					dialog.showDialog(3);
@@ -650,7 +711,7 @@ class GameMap {
 					break;
 				case 14:
 					dialog.clearDialog();
-					dialog.showDialog(6);
+					dialog.showDialog(7);
 					break;
 				case 15:
 					dialog.showContent('台大學生會 87 週年校慶，歡迎你一起來湊！熱！鬧！');
