@@ -93,8 +93,9 @@ class AudioPlayer {
   AudioBufferSourceNode _source;
   BiquadFilterNode _filter;
   String audioName;
+  bool isloop = false;
 
-  AudioPlayer(this.audioName, Map inputBuffers) {
+  AudioPlayer(this.audioName, Map inputBuffers, [this.isloop]) {
     appCtx = new ApplicationContext(inputBuffers);
   }
 
@@ -114,7 +115,7 @@ class AudioPlayer {
 
     // Play!
     _source.start(0);
-    _source.loop = false;
+    _source.loop = isloop;
   }
 
   void stop() {

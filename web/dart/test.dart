@@ -23,7 +23,7 @@ void initAudio() {
 	audioChoice = new AudioPlayer("choice", CHOICE);
 	audioShout = new AudioPlayer("shout", SHOUT);
 	audioIntro = new AudioPlayer("intro", INTRO_BGM);
-	audioBGM = new AudioPlayer("bgm", BGM);
+	audioBGM = new AudioPlayer("bgm", BGM, true);
 	audioAnthem = new AudioPlayer("anthem", ANTHEM);
 	audioMagic = new AudioPlayer("magic", MAGIC);
 }

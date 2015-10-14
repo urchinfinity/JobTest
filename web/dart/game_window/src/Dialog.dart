@@ -45,7 +45,7 @@ class Dialog {
 	} 
 
 	void showOptions(List<String> options) {
-		for (int i = 0; i < OPTIONS_NUM; i++) {
+		for (int i = 0; i < options.length; i++) {
 			ParagraphElement p = new ParagraphElement();
 			p.innerHtml = options[i];
 			p.id = '$i';
