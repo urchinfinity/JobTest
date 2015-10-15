@@ -5,7 +5,6 @@ import 'dart:async';
 import 'dart:html';
 
 import 'game_window/GameWindow.dart';
-import 'game_window/Fieldname.dart';
 
 GameMap gameMap = new GameMap();
 
