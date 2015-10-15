@@ -20,10 +20,10 @@ class GameMap {
 	}
 
 	void startStory() {
-		 _startStoryline1()
-		 // _startBackgroundStory()
-		 // .then((_) => _startStoryline0())
-		 // .then((_) => _startStoryline1())
+		 // _startStoryline1()
+		 _startBackgroundStory()
+		 .then((_) => _startStoryline0())
+		 .then((_) => _startStoryline1())
 		 .then((_) => _startStoryline2())
 		.then((_) => _startStoryline3())
 		.then((_) => _startStoryline4())
