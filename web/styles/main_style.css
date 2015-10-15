@@ -7,7 +7,6 @@ body {
 	font-size: 30pt;
 	font-weight: bold;
 
-	padding: 5px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 80%;
@@ -197,6 +196,7 @@ footer {
 footer a {
 	display: block;
 	width: 100%;
+	padding-bottom: 5px;
 	text-align: center;
 	text-decoration: none;
 
