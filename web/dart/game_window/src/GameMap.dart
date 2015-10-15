@@ -2,7 +2,7 @@ part of GameWindow;
 
 class GameMap {
 	
-	ImageElement _background;
+	ElementList<ImageElement> _backgrounds;
 	DivElement _character;
 	Dialog dialog;
 	Character character;
@@ -10,7 +10,7 @@ class GameMap {
 	JobMatcher matcher;
 
 	GameMap() {
-		_background = querySelector('#map img');
+		_backgrounds = querySelectorAll('#map img');
 		_character = querySelector('#main_character');
 		character = new Character('#main_character');
 		bgCntrl = new BackgroundController();
@@ -35,7 +35,7 @@ class GameMap {
 	Future _startBackgroundStory() {
 		Completer cmpl = new Completer();
 
-		_background.src = IMG_STORY;
+		_backgrounds[0].classes.remove('hidden');
 		audioIntro.play();
 
 		ElementList<ParagraphElement> storyLines = querySelectorAll('#map .content p');
@@ -47,7 +47,7 @@ class GameMap {
 			if (curP < storyLines.length)
 				storyLines[curP].style.width = '100%';
 			else if (curP == storyLines.length + 1) {
-				_background.src = IMG_NO_BACKGROUND;
+				_backgrounds[0].classes.add('hidden');
 				querySelector('#map .content').classes.add('hidden');
 				timer.cancel();
 				audioIntro.stop();
@@ -64,8 +64,7 @@ class GameMap {
 		int curP = 0;
 		Timer timer;
 
-		_background.src = IMG_CLASSROOM_DARK;
-
+		_backgrounds[1].classes.remove('hidden');
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
@@ -75,7 +74,8 @@ class GameMap {
 					dialog.showContent('「大家怎麼不開燈呢？同學幫我開個燈！」');
 					break;
 				case 2:
-					_background.src = IMG_CLASSROOM_BRIGHT;
+					_backgrounds[1].classes.add('hidden');
+					_backgrounds[2].classes.remove('hidden');
 					dialog.clearDialog();
 					dialog.showDialog(3);
 					break;
@@ -88,7 +88,8 @@ class GameMap {
 				case 5:
 					break;
 				case 6:
-					_background.classes.add('blur');
+					_backgrounds[2].classes.add('blur');
+					_backgrounds[3].classes.add('blur');
 					break;
 				case 7:
 					dialog.clearDialog();
@@ -129,13 +130,13 @@ class GameMap {
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
-					_background.src = IMG_NO_BACKGROUND;
+					_backgrounds[2].classes.add('hidden');
 					audioMagic.play();
 					audioBGM.play();
 					break;
 				case 1:
-					_background.src = IMG_BACKGROUND_1;
-					_background.classes.remove('blur');
+					_backgrounds[3].classes.remove('hidden');
+					_backgrounds[3].classes.remove('blur');
 					break;
 				case 2:
 					character.show(3, 16);
@@ -181,7 +182,7 @@ class GameMap {
 			return character.goLeft(1);
 		}).then((_) {
 			character.turnTo(BACK);
-			return bgCntrl.startTranslate(character.pixelSize * 14);
+			return bgCntrl.startTranslate(character.pixelSize * 14, 3);
 		}).then((_) {
 			Completer cmpl = new Completer();
 			int curP = 0;
@@ -251,14 +252,14 @@ class GameMap {
 		Timer timer;
 		character.mapId = 2;
 
-		_background.src = IMG_NO_BACKGROUND;
-		bgCntrl.resetPos();
+		_backgrounds[3].classes.add('hidden');
+		bgCntrl.resetPos(3);
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
 					break;
 				case 1:
-					_background.src = IMG_BACKGROUND_2;
+					_backgrounds[4].classes.remove('hidden');
 					character.show(1, 34);
 					break;
 				default:
@@ -342,7 +343,7 @@ class GameMap {
 		return character.goLeft(10)
 		.then((_) {
 			character.turnTo(BACK);
-			return bgCntrl.startTranslate(character.pixelSize * 11);
+			return bgCntrl.startTranslate(character.pixelSize * 11, 4);
 		}).then((_) {
 			Completer cmpl = new Completer();
 			int curP = 0;
@@ -410,14 +411,14 @@ class GameMap {
 		Timer timer;
 		character._mapId = 3;
 
-		_background.src = IMG_NO_BACKGROUND;
-		bgCntrl.resetPos();
+		_backgrounds[4].classes.add('hidden');
+		bgCntrl.resetPos(4);
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
 					break;
 				case 1:
-					_background.src = IMG_BACKGROUND_3;
+					_backgrounds[5].classes.remove('hidden');
 					character.show(1, 24);
 					character.turnTo(BACK);
 					break;
@@ -528,13 +529,13 @@ class GameMap {
 			});
 			return cmpl.future;
 		}).then((_) {
-			_background.src = IMG_NO_BACKGROUND;
+			_backgrounds[5].classes.add('hidden');
 			return character.hide();
 		}).then((_) {
 			Completer cmpl = new Completer();
 
 			new Timer(new Duration(seconds: 2), () {
-				_background.src = IMG_BACKGROUND_3;
+				_backgrounds[5].classes.remove('hidden');
 				character.show(25, 18);
 				new Timer(new Duration(seconds: 2), () {
 					return character.goBack(1)
@@ -556,10 +557,10 @@ class GameMap {
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
-					_background.src = IMG_NO_BACKGROUND;
+					_backgrounds[5].classes.add('hidden');
 					break;
 				case 1:
-					_background.src = IMG_BACKGROUND_4;
+					_backgrounds[6].classes.remove('hidden');
 					character.show(1, 21);
 					break;
 				default:
@@ -654,10 +655,10 @@ class GameMap {
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
-					_background.src = IMG_NO_BACKGROUND;
+					_backgrounds[6].classes.add('hidden');
 					break;
 				case 1:
-					_background.src = IMG_BACKGROUND_5;
+					_backgrounds[7].classes.remove('hidden');
 					character.show(1, 19);
 					character.turnTo(BACK);
 					break;
@@ -801,12 +802,12 @@ class GameMap {
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 			switch (curP++) {
 				case 0:
-					_background.src = IMG_NO_BACKGROUND;
+					_backgrounds[7].classes.add('hidden');
 					audioMagic.play();
 					break;
 				case 1:
-					_background.src = IMG_BACKGROUND_6;
-					_background.style.top = '${-(character.pixelSize * 5).toInt()}px';
+					_backgrounds[8].classes.remove('hidden');
+					_backgrounds[8].style.top = '${-(character.pixelSize * 5).toInt()}px';
 					character.show(3, 19);
 					character.turnTo(BACK);
 					audioAnthem.play();

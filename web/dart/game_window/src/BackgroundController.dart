@@ -2,7 +2,7 @@ part of GameWindow;
 
 class BackgroundController {
 
-	ImageElement _background;
+	ElementList<ImageElement> _backgrounds;
 
 	int get _windowW => window.innerWidth;
 	int get _windowH => window.innerHeight;
@@ -17,13 +17,13 @@ class BackgroundController {
 	int get b6Height => backgroundWidth * BACKGROUND_6_HEIGHT ~/ BACKGROUND_6_WIDTH;
 
 	BackgroundController() {
-		_background = querySelector('#map img');
+		_backgrounds = querySelectorAll('#map img');
 
 	}
 
- 	Future startTranslate(double height) {
+ 	Future startTranslate(double height, int index) {
  		Completer cmpl = new Completer();
- 		_background.style.transform = 'translate(0, ${height.toInt()}px)';
+ 		_backgrounds[index].style.transform = 'translate(0, ${height.toInt()}px)';
 
  		new Timer(new Duration(seconds: 2), (){
  			return cmpl.complete();
@@ -32,7 +32,7 @@ class BackgroundController {
  		return cmpl.future;
 	}
 
-	void resetPos() {
- 		_background.style.transform = 'translate(0, 0)';
+	void resetPos(int index) {
+ 		_backgrounds[index].style.transform = 'translate(0, 0)';
 	}
 }
