@@ -252,7 +252,8 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_2;
-					character.show(620, 635);
+					character.show(10, 31);
+					//character.show(620, 635);
 					break;
 				case 2:
 					dialog.showDialog(4);
@@ -279,13 +280,13 @@ class GameMap {
 					.then((_) => cmpl.complete());
 				}
 			});
-		return cmpl.future.then((_){
-			character.turnTo(LEFT);
-			return character.goLeft(9);
-		}).then((_){
-			character.turnTo(BACK);
-			return character.goBack(10);
-		});
+		return cmpl.future;//.then((_){
+		// 	character.turnTo(LEFT);
+		// 	return character.goLeft(9);
+		// }).then((_){
+		// 	character.turnTo(BACK);
+		// 	return character.goBack(10);
+		// });
 	}
 
 	Future startNoteListener() {
