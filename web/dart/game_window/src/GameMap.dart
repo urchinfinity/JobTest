@@ -503,9 +503,9 @@ class GameMap {
 			new Timer(new Duration(seconds: 2), () {
 				_backgrounds[5].classes.remove('hidden');
 				_backgrounds[5].style.top = '0px';
-				character.show(19, 18);
+				character.show(20, 18);
 				new Timer(new Duration(seconds: 2), () {
-					return character.goBack(5)
+					return character.goBack(4)
 					.then((_) => character.hide())
 					.then((_) => cmpl.complete());
 				});
@@ -784,7 +784,7 @@ class GameMap {
 					dialog.showDialog(3);
 					break;
 				case 3:
-					dialog.showContent('恭喜你完成了湊熱鬧職業性向測驗，');
+					dialog.showContent('恭喜你完成了大富翁職業性向測驗，');
 					break;
 				case 4:
 					dialog.showContent('依照剛剛的選擇，你最適合的職業是 ${results[0]} ');
@@ -797,7 +797,7 @@ class GameMap {
 				case 7:
 					break;
 				case 8:
-					dialog.showDialog(9);
+					dialog.showDialog(11);
 					dialog.showContent('--');
 					break;
 				case 9:
