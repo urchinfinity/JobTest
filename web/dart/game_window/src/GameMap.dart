@@ -826,7 +826,7 @@ class GameMap {
 					dialog.showDialog(7);
 					break;
 				case 18:
-					dialog.showContent('台大學生會 87 週年校慶，歡迎你一起來湊！熱！鬧！');
+					dialog.showContent('臺大學生會 87 週年校慶，歡迎你一起來湊！熱！鬧！');
 					break;
 				default:
 					timer.cancel();
