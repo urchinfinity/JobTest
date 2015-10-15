@@ -60,7 +60,7 @@ class Dialog {
 		ElementList<ParagraphElement> options = querySelectorAll('#dialog .options p');
 		options.forEach((ParagraphElement option) {
 			var listener = option.onClick.listen((e) {
-				//audioChoice.play();
+				audioChoice.play();
 				listeners.forEach((lstnr) => lstnr.cancel());
 				return cmpl.complete(int.parse(option.id));
 			});

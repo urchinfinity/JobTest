@@ -47,7 +47,7 @@ body {
 	width: 100%;
 	height: auto;
 	
-    transition: all 3s linear;
+    transition: all 2s linear;
     transition-timing-function: linear;
 }
 
@@ -85,14 +85,14 @@ body {
     transition-timing-function: linear;
 }
 
-#main_character {
+#main_character, #npc {
 	position: absolute;
 	top: 0;
 
 	width: 30px;
 }
 
-#main_character img {
+#main_character img, #npc img {
 	width: 100%;
 	height: auto;
 }

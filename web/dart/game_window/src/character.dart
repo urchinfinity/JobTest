@@ -29,13 +29,23 @@ class Character {
 	int get digitNum {
 		switch(_mapId) {
 			case 1:
-				return 39;
-			case 6:
-				return 30;
-			default:
+				return 32;
+			case 2:
 				return 40;
+			case 3:
+				return 40;
+			case 4:
+				return 40;
+			case 5:
+				return 40;
+			case 6:
+				return 40;
+			default:
+				return 29;
 		}
 	}
+
+	double get pixelSize => (window.innerWidth * 3 / 5) / digitNum;
 
 	void set mapId(int id) {
 		_mapId = id;
@@ -46,13 +56,17 @@ class Character {
 	}
 
 	 void show(int top, int left) {
-		double size = ((window.innerWidth * 3 / 5) / digitNum);
+		int halfSize = pixelSize ~/ 3;
 		DivElement gameWindow = querySelector("#game-window");
 		int bottom = gameWindow.offsetTop + gameWindow.offsetHeight;
-		_character.style.top = px((bottom - top * size).ceil());
-		_character.style.left = px(((left - 1) * size).ceil());
-		//_character.style.top = px(top);
-		//_character.style.left = px(left);
+
+		int gamewindowH = 750;
+		//_character.style.top = px((bottom - top * size).ceil());
+		//_character.style.left = px(((left - 1) * size).ceil());
+
+		_character.style.top = px(gamewindowH - (top * pixelSize).toInt());
+		_character.style.left = px((left * pixelSize).toInt() - halfSize);
+
 		_character.style.width = px(((window.innerWidth * 3 / 5) / digitNum).ceil());
 		_character.classes.remove('hidden');
 	}

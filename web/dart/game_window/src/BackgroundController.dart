@@ -21,7 +21,18 @@ class BackgroundController {
 
 	}
 
- 	void startTranslate(int height) {
- 		_background.style.transform = 'translate(0, ${GAME_WINDOW_HEIGHT - height})';
+ 	Future startTranslate(double height) {
+ 		Completer cmpl = new Completer();
+ 		_background.style.transform = 'translate(0, ${height.toInt()}px)';
+
+ 		new Timer(new Duration(seconds: 2), (){
+ 			return cmpl.complete();
+ 		});
+
+ 		return cmpl.future;
+	}
+
+	void resetPos() {
+ 		_background.style.transform = 'translate(0, 0)';
 	}
 }

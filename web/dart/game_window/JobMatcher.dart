@@ -2,13 +2,7 @@ library JobMatcher;
 
 class JobMatcher {
 
-	List<int> choices;
-
-	JobMatcher() {
-		choices = new List();
-	}
-
-	List<String> getJob() {
+	List<String> getJob(List<int> choices) {
 		switch (choices[0]) {
 			case 0:
 				switch (choices[1]) {
