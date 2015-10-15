@@ -60,7 +60,7 @@ class Character {
 		DivElement gameWindow = querySelector("#game-window");
 		int bottom = gameWindow.offsetTop + gameWindow.offsetHeight;
 
-		int gamewindowH = 750;
+		int gamewindowH = 550;
 		//_character.style.top = px((bottom - top * size).ceil());
 		//_character.style.left = px(((left - 1) * size).ceil());
 

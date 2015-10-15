@@ -20,11 +20,11 @@ class GameMap {
 	}
 
 	void startStory() {
-		// _startStoryline0()
-		_startBackgroundStory()
-		.then((_) => _startStoryline0())
-		.then((_) => _startStoryline1())
-		.then((_) => _startStoryline2_1())
+		 _startStoryline0()
+		// _startBackgroundStory()
+		// .then((_) => _startStoryline0())
+		 .then((_) => _startStoryline1())
+		 .then((_) => _startStoryline2_1())
 		.then((_) => _startStoryline2_2())
 		.then((_) => _startStoryline3())
 		.then((_) => _startStoryline4())
@@ -50,7 +50,7 @@ class GameMap {
 				_background.src = IMG_NO_BACKGROUND;
 				querySelector('#map .content').classes.add('hidden');
 				timer.cancel();
-				//audioIntro.stop();
+				audioIntro.stop();
 				return cmpl.complete();
 			}
 			curP++;
@@ -131,15 +131,13 @@ class GameMap {
 				case 0:
 					_background.src = IMG_NO_BACKGROUND;
 					audioMagic.play();
-					break;
-				case 1:
 					audioBGM.play();
 					break;
-				case 2:
+				case 1:
 					_background.src = IMG_BACKGROUND_1;
 					_background.classes.remove('blur');
 					break;
-				case 3:
+				case 2:
 					character.show(3, 16);
 					break;
 				default:
@@ -232,9 +230,9 @@ class GameMap {
 
 	Future _startStoryline1Result0() {
 		character.turnTo(LEFT);
-		return character.goLeft(13).then((_) {
+		return character.goLeft(12).then((_) {
 			character.turnTo(BACK);
-			return character.goBack(16);
+			return character.goBack(13);
 		}).then((_) => character.hide());
 	}
 
@@ -243,7 +241,7 @@ class GameMap {
 		character.turnTo(RIGHT);
 		return character.goRight(14).then((_) {
 			character.turnTo(BACK);
-			return character.goBack(16);
+			return character.goBack(13);
 		}).then((_) => character.hide());
 	}
 
@@ -308,13 +306,7 @@ class GameMap {
 						.then((_) => cmpl.complete());
 					}
 				});
-		return cmpl.future;//.then((_){
-		// 	character.turnTo(LEFT);
-		// 	return character.goLeft(9);
-		// }).then((_){
-		// 	character.turnTo(BACK);
-		// 	return character.goBack(10);
-		// });
+		return cmpl.future;
 		});
 	}
 
@@ -322,8 +314,8 @@ class GameMap {
 		Completer cmpl = new Completer();
 		int leftBound = (character.pixelSize * 18).toInt();
 		int rightBound = (character.pixelSize * 21).toInt();
-		int topBound = (character.pixelSize * 8).toInt();
-		int bottomBound = (character.pixelSize * 10).toInt();
+		int topBound = (character.pixelSize * 6).toInt();
+		int bottomBound = (character.pixelSize * 8).toInt();
 
 		DivElement note = new DivElement()
 			..style.position = 'absolute'
@@ -393,7 +385,7 @@ class GameMap {
 		character.turnTo(LEFT);
 		return character.goLeft(16).then((_) {
 			character.turnTo(BACK);
-			return character.goBack(19);
+			return character.goBack(17);
 		}).then((_) {
 			character.turnTo(RIGHT);
 			return character.goRight(1);
@@ -403,9 +395,9 @@ class GameMap {
 
 	Future _startStoryline2Result1() {
 		character.turnTo(RIGHT);
-		return character.goRight(16).then((_) {
+		return character.goRight(17).then((_) {
 			character.turnTo(BACK);
-			return character.goBack(19);
+			return character.goBack(17);
 		}).then((_) {
 			character.turnTo(LEFT);
 			return character.goLeft(1);
@@ -815,7 +807,7 @@ class GameMap {
 				case 1:
 					_background.src = IMG_BACKGROUND_6;
 					_background.style.top = '${-(character.pixelSize * 5).toInt()}px';
-					character.show(5, 19);
+					character.show(3, 19);
 					character.turnTo(BACK);
 					audioAnthem.play();
 					 _showNPC();

@@ -87,7 +87,7 @@ class ApplicationContext {
   }
 }
 
-class AudioPlayer {
+class AudioPlayer1 {
   final _FREQ = 5000;
   ApplicationContext appCtx;
   AudioBufferSourceNode _source;
@@ -95,7 +95,7 @@ class AudioPlayer {
   String audioName;
   bool isloop = false;
 
-  AudioPlayer(this.audioName, Map inputBuffers, [this.isloop]) {
+  AudioPlayer1(this.audioName, Map inputBuffers, [this.isloop]) {
     appCtx = new ApplicationContext(inputBuffers);
   }
 
@@ -120,5 +120,22 @@ class AudioPlayer {
 
   void stop() {
     _source.stop(0);
+  }
+}
+
+class AudioPlayer {
+
+  JsObject audio;
+
+  AudioPlayer(Element elem) {
+    audio = new JsObject.fromBrowserObject(elem);
+  }
+
+  void play() {
+    audio.callMethod('play');
+  }
+
+  void stop() {
+    audio.callMethod('pause');
   }
 }

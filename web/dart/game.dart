@@ -2,6 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
+import 'dart:html';
 
 import 'game_window/GameWindow.dart';
 import 'game_window/Fieldname.dart';
@@ -16,10 +17,10 @@ void main() {
 }
 
 void initAudio() {
-	 audioChoice = new AudioPlayer("choice", CHOICE);
-	 audioShout = new AudioPlayer("shout", SHOUT);
-	 audioIntro = new AudioPlayer("intro", INTRO_BGM);
-	 audioBGM = new AudioPlayer("bgm", BGM, true);
-	 audioAnthem = new AudioPlayer("anthem", ANTHEM);
-	 audioMagic = new AudioPlayer("magic", MAGIC);
+	  audioChoice = new AudioPlayer(querySelector('#audio-choice'));
+	  audioShout = new AudioPlayer(querySelector('#audio-shout'));
+	  audioIntro = new AudioPlayer(querySelector('#audio-intro'));
+	  audioBGM = new AudioPlayer(querySelector('#audio-bgm'));
+	  audioAnthem = new AudioPlayer(querySelector('#audio-anthem'));
+	  audioMagic = new AudioPlayer(querySelector('#audio-magic'));
 }

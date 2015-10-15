@@ -1,9 +1,9 @@
 library Fieldname;
 
-const int TEXT_HEIGHT = 60,
-		  GAME_WINDOW_HEIGHT = 750,
+const int TEXT_HEIGHT = 50,
+		  GAME_WINDOW_HEIGHT = 550,
 		  DIALOG_ANIMATION_DURATION = 1000,
-		  DIALOG_TEXT_DURATION = 2000,
+		  DIALOG_TEXT_DURATION = 1500,
 		  STORYLINE_DURATION = 5,
 
           BACKGROUND_1_WIDTH = 32,
@@ -39,12 +39,12 @@ const String IMG_STORY = "../source/background/story.png",
 			 IMG_NO_BACKGROUND = "",
 			 IMG_CHARACTER= "../source/character/";
 
-const String AUDIO_CHOICE = "../../source/audio/choice.WAV",
-			 AUDIO_SHOUT = "../../source/audio/shout.wav",
-			 AUDIO_INTRO_BGM = "../../source/audio/intro_bgm.wav",
-			 AUDIO_BGM = "../../source/audio/bgm.wav",
-			 AUDIO_ANTHEM = "../../source/audio/anthem.wav",
-			 AUDIO_MAGIC = "../../source/audio/magic.WAV";
+const String AUDIO_CHOICE = "../../source/audio/choice.mp3",
+			 AUDIO_SHOUT = "../../source/audio/shout.mp3",
+			 AUDIO_INTRO_BGM = "../../source/audio/intro_bgm.mp3",
+			 AUDIO_BGM = "../../source/audio/bgm.mp3",
+			 AUDIO_ANTHEM = "../../source/audio/anthem.mp3",
+			 AUDIO_MAGIC = "../../source/audio/magic.mp3";
 
 final Map CHOICE = {"choice": AUDIO_CHOICE},
 		  SHOUT = {"shout": AUDIO_SHOUT},
