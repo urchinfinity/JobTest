@@ -19,7 +19,7 @@ class JobMatcher {
 							default:
 								return ['', ''];
 						}
-						break;
+						return ['', ''];
 					case 1:
 						switch (choices[2]) {
 							case 0:
@@ -33,11 +33,11 @@ class JobMatcher {
 							default:
 								return ['', ''];
 						}
-						break;
+						return ['', ''];
 					default:
 						return ['', ''];
 				}
-				break;
+				return ['', ''];
 			case 1:
 				switch (choices[1]) {
 					case 0:
@@ -53,7 +53,7 @@ class JobMatcher {
 							default:
 								return ['', ''];
 						}
-						break;
+						return ['', ''];
 					case 1:
 						switch (choices[2]) {
 							case 0:
@@ -67,11 +67,11 @@ class JobMatcher {
 							default:
 								return ['', ''];
 						}
-						break;
+						return ['', ''];
 					default:
 						return ['', ''];
 				}
-				break;
+				return ['', ''];
 			default:
 				return ['', ''];
 		}
