@@ -65,7 +65,7 @@ class Character {
 		//_character.style.left = px(((left - 1) * size).ceil());
 
 		_character.style.top = px(gamewindowH - (top * pixelSize).toInt());
-		_character.style.left = px((left * pixelSize).toInt() - halfSize);
+		_character.style.left = px((left * pixelSize).toInt());
 
 		_character.style.width = px(((window.innerWidth * 3 / 5) / digitNum).ceil());
 		_character.classes.remove('hidden');

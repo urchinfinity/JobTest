@@ -20,11 +20,11 @@ class GameMap {
 	}
 
 	void startStory() {
-		 _startBackgroundStory()
-		 .then((_) => _startStoryline0())
-		 .then((_) => _startStoryline1())
-		 .then((_) => _startStoryline2_1())
-		.then((_) => _startStoryline2_2())
+		 _startStoryline1()
+		 // _startBackgroundStory()
+		 // .then((_) => _startStoryline0())
+		 // .then((_) => _startStoryline1())
+		 .then((_) => _startStoryline2())
 		.then((_) => _startStoryline3())
 		.then((_) => _startStoryline4())
 		.then((_) => _startStoryline5())
@@ -136,8 +136,6 @@ class GameMap {
 				case 1:
 					_backgrounds[3].classes.remove('hidden');
 					_backgrounds[3].classes.remove('blur');
-					break;
-				case 2:
 					character.show(3, 16);
 					break;
 				default:
@@ -230,7 +228,7 @@ class GameMap {
 
 	Future _startStoryline1Result0() {
 		character.turnTo(LEFT);
-		return character.goLeft(12).then((_) {
+		return character.goLeft(13).then((_) {
 			character.turnTo(BACK);
 			return character.goBack(13);
 		}).then((_) => character.hide());
@@ -239,13 +237,13 @@ class GameMap {
 
 	Future _startStoryline1Result1() {
 		character.turnTo(RIGHT);
-		return character.goRight(14).then((_) {
+		return character.goRight(13).then((_) {
 			character.turnTo(BACK);
 			return character.goBack(13);
 		}).then((_) => character.hide());
 	}
 
-	Future _startStoryline2_1() {
+	Future _startStoryline2() {
 		Completer cmpl = new Completer();
 		int curP = 0;
 		Timer timer;
@@ -302,45 +300,14 @@ class GameMap {
 						break;
 					default:
 						timer.cancel();
-						startNoteListener()
-						.then((_) => cmpl.complete());
+						return cmpl.complete();
 					}
 				});
 		return cmpl.future;
-		});
-	}
-
-	Future startNoteListener() {
-		Completer cmpl = new Completer();
-		int leftBound = (character.pixelSize * 18).toInt();
-		int rightBound = (character.pixelSize * 21).toInt();
-		int topBound = (character.pixelSize * 6).toInt();
-		int bottomBound = (character.pixelSize * 8).toInt();
-
-		DivElement note = new DivElement()
-			..style.position = 'absolute'
-			..style.top = '${topBound}px'
-			..style.left = '${leftBound}px'
-			..style.width = '${rightBound - leftBound}px'
-			..style.height = '${bottomBound - topBound}px'
-			..style.backgroundColor = 'transparent';
-
-		querySelector('#game-window').children.add(note);
-
-		var listener;
-		listener = note.onClick.listen((e) {
-			listener.cancel();
-			querySelector('#game-window').children.remove(note);
-			return cmpl.complete();
-		});
-		return cmpl.future;
-	}
-
-
-	Future _startStoryline2_2() {
-		character.turnTo(LEFT);
-		return character.goLeft(10)
-		.then((_) {
+		}).then((_) {
+			character.turnTo(LEFT);
+			return character.goLeft(10);
+		}).then((_) {
 			character.turnTo(BACK);
 			return bgCntrl.startTranslate(character.pixelSize * 11, 4);
 		}).then((_) {
@@ -395,7 +362,7 @@ class GameMap {
 
 	Future _startStoryline2Result1() {
 		character.turnTo(RIGHT);
-		return character.goRight(17).then((_) {
+		return character.goRight(16).then((_) {
 			character.turnTo(BACK);
 			return character.goBack(17);
 		}).then((_) {
@@ -535,9 +502,10 @@ class GameMap {
 
 			new Timer(new Duration(seconds: 2), () {
 				_backgrounds[5].classes.remove('hidden');
-				character.show(25, 18);
+				_backgrounds[5].style.top = '0px';
+				character.show(19, 18);
 				new Timer(new Duration(seconds: 2), () {
-					return character.goBack(1)
+					return character.goBack(5)
 					.then((_) => character.hide())
 					.then((_) => cmpl.complete());
 				});
@@ -764,7 +732,7 @@ class GameMap {
 			return character.goLeft(5);
 		}).then((_) {
 			character.turnTo(BACK);
-			return character.goBack(9);
+			return character.goBack(7);
 		}).then((_) {
 			return character.hide();
 		});
