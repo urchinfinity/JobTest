@@ -46,11 +46,11 @@ class Character {
 	}
 
 	 void show(int top, int left) {
-		int size = ((window.innerWidth * 3 / 5) / digitNum).ceil();
+		double size = ((window.innerWidth * 3 / 5) / digitNum);
 		DivElement gameWindow = querySelector("#game-window");
 		int bottom = gameWindow.offsetTop + gameWindow.offsetHeight;
-		_character.style.top = px(bottom - top * size);
-		_character.style.left = px((left - 1) * size);
+		_character.style.top = px((bottom - top * size).ceil());
+		_character.style.left = px(((left - 1) * size).ceil());
 		//_character.style.top = px(top);
 		//_character.style.left = px(left);
 		_character.style.width = px(((window.innerWidth * 3 / 5) / digitNum).ceil());

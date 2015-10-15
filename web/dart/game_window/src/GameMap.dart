@@ -31,7 +31,7 @@ class GameMap {
 //		.then((_) => _startStoryline5())
 //		.then((_) => _startStoryline6());
 
-		_startStoryline2_1();
+		_startStoryline4();
 	}
 
 	Future _startBackgroundStory() {
@@ -135,7 +135,7 @@ class GameMap {
 					break;
 				case 2:
 					_background.src = IMG_BACKGROUND_1;
-					character.show(650, 430);
+					character.show(5, 20);
 					_background.classes.remove('blur');
 					break;
 				case 3:
@@ -370,7 +370,7 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_3;
-					character.show(640, 510);
+					character.show(5, 25);
 					character.turnTo(BACK);
 					break;
 				case 2:
@@ -476,7 +476,7 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_4;
-					character.show(640, 440);
+					character.show(5, 21);
 					break;
 				case 2:
 					dialog.showDialog(2);
@@ -547,7 +547,7 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_5;
-					character.show(680, 405);
+					character.show(3, 20);
 					character.turnTo(BACK);
 					break;
 				case 2:
@@ -671,7 +671,7 @@ class GameMap {
 					break;
 				case 1:
 					_background.src = IMG_BACKGROUND_6;
-					character.show(420, 410);
+					character.show(10, 21);
 					character.turnTo(FORWARD);
 					//audioAnthem.play();
 					break;
