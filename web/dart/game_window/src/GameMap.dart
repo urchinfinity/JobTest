@@ -871,10 +871,10 @@ class GameMap {
 				default:
 					timer.cancel();
 					dialog.showContent('11/9~11/20 刮亮臺大');
-					dialog.showContent('11/14 09:00~17:30 臺大大富翁');
+					dialog.showContent('11/14 08:30~17:30 臺大大富翁');
 					dialog.showContent('11/14 14:00~17:00 彩繪椰林大道');
 					dialog.showContent('11/14 17:30~21:00 我就尬藝你');
-					dialog.showContent('11/14 21:30~無極限!!! 臺大之夜');
+					dialog.showContent('11/14 21:30~ 無極限!!! 臺大之夜');
 					break;
 			}
 		});
