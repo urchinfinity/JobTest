@@ -1,0 +1,205 @@
+body {
+	background-color: #ffe530;
+}
+
+.title {
+	font-family: Microsoft JhengHei, 'Coming Soon', cursive;
+	font-size: 30pt;
+	font-weight: bold;
+
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	text-align: center;
+}
+
+.inner-border {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.page-header {
+	border-style: none;
+	padding: 0 10%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+#game-window {
+ 	position: relative;
+	width: 60%;
+	height: 750px;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-color: #000;
+}
+
+#map {
+ 	position: relative;
+	border: 1px solid #000;
+
+	width: 100%;
+	height: 100%;
+
+	overflow: hidden;
+}
+
+#map img {
+	position: absolute;
+	bottom: 1px;
+
+	width: 100%;
+	height: auto;
+	
+    transition: all 2s linear;
+    transition-timing-function: linear;
+}
+
+.blur {
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -ms-filter: blur(20px);    
+    filter: blur(20px);    
+}
+
+#map .content {
+	position: absolute;
+	top: 0;
+
+	padding: 30px;
+}
+
+#map .content p {
+	margin: 20px 0px;
+	padding: 0;
+
+	width: 0px;
+	overflow: hidden;
+
+	font-family: DFKai-sb;
+	font-size: 22pt;
+	font-weight: bold;
+	color: #000;
+	text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;
+
+
+	white-space:nowrap;
+
+    transition: all 5s linear;
+    transition-timing-function: linear;
+}
+
+#main_character, #npc {
+	position: absolute;
+	top: 0;
+
+	width: 30px;
+}
+
+#main_character img, #npc img {
+	width: 100%;
+	height: auto;
+}
+
+#dialog {
+	position: absolute;
+    bottom: 0;
+    
+    width: 100%;
+    height: 0px;
+
+    border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: #000;
+
+	overflow: hidden;
+
+    transition: all 500ms linear;
+    transition-timing-function: linear;
+}
+
+#dialog_mask {
+	width: 100%;
+	height: 100%;
+    transition: all 1s linear;
+    transition-timing-function: linear;
+}
+
+#dialog .outer {
+	background-color: transparent;
+
+	width: 100%;
+	height: 100%;
+
+    border-style: solid;
+	border-width: 8px;
+	border-radius: 5px;
+	border-color: #fff;
+}
+
+#dialog .inner {
+	background-color: rgba(47, 88, 255, 0.5);
+
+	width: 100%;
+	height: 100%;
+
+    border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: #000;
+}
+
+#dialog .image {
+	margin: 10px 30px;
+	height: 90%;
+	display: inline-block;
+}
+
+#dialog .image img {
+	width: auto;
+	height: 100%;
+}
+
+#dialog .text {
+	font-family: Microsoft JhengHei;
+	font-size: 24pt;
+	font-weight: bold;
+	color: #fff;	
+
+	margin: 10px 50px;
+	height: 90%;
+	display: inline-block;
+	vertical-align : top;
+}
+
+#dialog .content p, #dialog .options p  {
+	margin: 0px;
+	padding: 3px;
+}
+
+#dialog .options p:hover {
+	background-color: rgba(100, 100, 100, 0.5);
+}
+
+.hidden {
+	display: none !important;
+}
+
+footer {
+	margin-top: 20px;
+}
+
+footer a {
+	display: block;
+	width: 100%;
+	padding-bottom: 5px;
+	text-align: center;
+	text-decoration: none;
+
+	font-family: Microsoft JhengHei, 'Coming Soon';
+	font-size: 14pt;
+}
