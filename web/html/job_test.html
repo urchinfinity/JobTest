@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<!--
+  Copyright (c) 2015, Urchin Wang / Abby Yeh. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+  <title>jobTest</title>
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- TODO: Swap the two stylesheet references in order to use Sass (and
+       uncomment the sass transformer in the pubspec.yaml file. -->
+  <link rel="stylesheet" href="../styles/main_style.css">
+  <!-- link rel="stylesheet" href="styles/main.css" -->
+</head>
+
+<body>
+
+  <header class="">
+    <div class="">
+      <h1 class="title">Job Tester</h1>
+    </div>
+  </header>
+
+  <main>
+    <div id="game-window">
+      <div id="map" class="inner-border">
+        <img src="">
+        <div class="content">
+          <p>天龍國甫建成，百廢待舉，各方勢力紛紛湧入境內，企圖搶先一步拓展領地</p>
+          <p>總面積近 113 公頃的大安預定地計畫成為培育高端知識份子的教育殿堂</p>
+          <p>這項對於未來棟樑的投資象徵勢力的永垂不朽，成為有志者一展雄圖的首選戰場</p>
+          <p>其中，以四股力量最為突出：</p>
+          <p>致力於教育的校方、野心勃勃的財團、資本厚實的地主以及代表人民的政府。</p>
+          <p>四方各握有不同領域職業的佼佼者</p>
+          <p>將以財富、權力、技能、策略互相競爭這座知識殿堂預定地的買入</p>
+          <p>建築物的興建攸關高端知識份子未來的去向，誰會得到最終的勝利？</p>
+        </div>
+      </div>
+      <div id="main_character" class="hidden">
+        <img src="../source/character/b1.png" class="b1">
+        <img src="../source/character/b2.png" class="b2 hidden">
+        <img src="../source/character/b3.png" class="b3 hidden">
+        <img src="../source/character/f1.png" class="f1 hidden">
+        <img src="../source/character/f2.png" class="f2 hidden">
+        <img src="../source/character/f3.png" class="f3 hidden">
+        <img src="../source/character/r1.png" class="r1 hidden">
+        <img src="../source/character/r2.png" class="r2 hidden">
+        <img src="../source/character/r3.png" class="r3 hidden">
+        <img src="../source/character/l1.png" class="l1 hidden">
+        <img src="../source/character/l2.png" class="l2 hidden">
+        <img src="../source/character/l3.png" class="l3 hidden">      
+      </div>
+      <div id="dialog" class="inner-border">
+        <div class="outer inner-border">
+          <div class="inner inner-border">
+            <div id="dialog_mask" class="hidden">
+              <div class="image hidden">
+                <img src="../source/character/main_whole.png">
+              </div>
+              <div class="text">
+                <div class="content">
+                </div>
+                <div class="options"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="character">
+      </div>
+    </div>
+  </main>
+
+  <script async type="application/dart" src="../dart/test.dart"></script>
+  
+</body>
+</html>

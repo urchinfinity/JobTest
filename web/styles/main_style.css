@@ -20,7 +20,7 @@ body {
 }
 
 #logo img, #banner img {
-	height: 35px;
+	height: 60px;
 	width: auto;
 }
 
@@ -215,6 +215,40 @@ audio {
 .hidden {
 	display: none !important;
 }
+
+#left-ad, #right-ad {
+	width: 18%;
+	margin-left: 1%;
+	margin-right: 1%;
+	display: inline-block;
+	float: left;
+	font-family: Microsoft JhengHei, 'Coming Soon', cursive;
+	font-size: 12pt;
+	color: #fff;
+}
+
+#right-ad {
+	float: right;
+}
+
+#left-ad a, #right-ad a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#left-ad a:hover, #right-ad a:hover {
+	color: #ffaa33;
+}
+
+#left-ad a:visited, #right-ad a:visited {
+	color: #fff;
+}
+
+
+#left-ad a:visited:hover, #right-ad a:visited:hover {
+	color: #ffaa33;
+}
+
 
 footer {
 	margin-top: 20px;
