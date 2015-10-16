@@ -14,7 +14,7 @@ class Character {
 	TimerCallCackFunction callback;
 	DivElement _character;
 
-	static const Duration PERIODIC = const Duration(milliseconds: 50);
+	static const Duration PERIODIC = const Duration(milliseconds: 60);
 	static const int ONE_MOVE = 3; 
 
 	int _mapId = 1;
