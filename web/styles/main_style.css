@@ -1,15 +1,38 @@
 body {
-	background-color: #ffe530;
+	background-image: url('../source/background/background.jpg');
+	background-size: 105% auto;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.title {
+#title {
+	text-align: center;
+	padding: 20px;
+}
+
+#banner {
+	float: left;
+}
+
+#logo {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#logo img, #banner img {
+	height: 35px;
+	width: auto;
+}
+
+#title .text {
+	display: inline-block;
 	font-family: Microsoft JhengHei, 'Coming Soon', cursive;
 	font-size: 24pt;
 	font-weight: bold;
+	color: #fff;
 
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
 	text-align: center;
 }
 
@@ -88,7 +111,7 @@ body {
 
 	white-space:nowrap;
 
-    transition: all 4s linear;
+    transition: all 5s linear;
     transition-timing-function: linear;
 }
 
@@ -197,13 +220,18 @@ footer {
 	margin-top: 20px;
 }
 
-footer a {
+footer a, footer p {
 	display: block;
 	width: 100%;
 	padding-bottom: 5px;
+	color: #fff;
 	text-align: center;
 	text-decoration: none;
 
 	font-family: Microsoft JhengHei, 'Coming Soon';
 	font-size: 14pt;
+}
+
+footer p a {
+	display: inline;
 }
