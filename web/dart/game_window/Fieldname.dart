@@ -1,6 +1,6 @@
 library Fieldname;
 
-const int TEXT_HEIGHT = 55,
+const int TEXT_HEIGHT = 53,
 		  GAME_WINDOW_HEIGHT = 550,
 		  DIALOG_ANIMATION_DURATION = 1000,
 		  DIALOG_TEXT_DURATION = 2000,
