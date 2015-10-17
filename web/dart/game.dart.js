@@ -482,8 +482,6 @@ $1:function(a){var z=this.a
 switch(z.a++){case 0:break
 case 1:break
 case 2:break
-case 3:break
-case 4:break
 default:z.b.u()
 J.m(this.d).m(0,"ease-in")
 z=this.b.a.a
