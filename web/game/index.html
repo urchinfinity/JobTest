@@ -22,22 +22,11 @@
 <body>
   <header id="title">
     <div id="logo">
-      <img src="../source/background/logo.png">
     </div>
     <div class="text">臺大大富翁職業性向測驗</div>
   </header>
 
   <main>
-    <div id="left-ad">
-      <a href="https://www.facebook.com/NTUstudents">臺大學生會FB粉絲專頁</a><br/><br/>
-      <a href="https://www.facebook.com/JumpintoNTU87thAnniversary">臺大捌柒湊熱鬧-Jump into NTU 87th Anniversary</a><br/><br/>
-      <a href="http://goo.gl/forms/3fHDgmDhCd">我要報名臺大大富翁</a>
-    </div>
-    <div id="right-ad">
-      <p>臺大87週年校慶紀念品手機殼預購:</p>
-      <a href="http://bit.ly/1Lamh5r">活大付款</a>
-      <a href="https://www.blink.com.tw/store/11?p=product">線上付款</a>
-    </div>
     <div id="game-window">
       <div id="map" class="inner-border">
         <img class="story hidden" src="../source/background/story.png">
@@ -47,7 +36,7 @@
         <img class="4 hidden" src="../source/background/4.png">
         <img class="5 hidden" src="../source/background/5.png">
         <img class="6 hidden" src="../source/background/6.png">
-        <div class="content">
+        <div class="content ease-in">
           <p>天龍國甫建成，百廢待舉，各方英雄紛紛湧入境內，企圖搶先一步拓展領土</p>
           <p>雄心壯志的你，也跟著來到了天龍國，國內好多預定地都吵得沸沸揚揚</p>
           <p>你買通在活動部做棉花糖的小妹，得到了小道消息：</p>
@@ -89,6 +78,9 @@
           </div>
         </div>
       </div>
+      <div id="start">
+        <button type="button" class="btn">Start</button>
+      </div>
     </div>
     <audio id="audio-choice" controls>
       <source src="../source/audio/choice.mp3" type="audio/mpeg">
@@ -108,18 +100,27 @@
     <audio id="audio-magic" controls>
       <source src="../source/audio/magic.mp3" type="audio/mpeg">
     </audio>
-  </main>
-  <footer>
-    <div>
-      <img src="../source/background/logo_Ceomate.png" style="margin-left:65%;">
-      <img src="../source/background/CB_logo.png" style="margin-left:10px;">
+    <div id="left-ad">
+      <a href="https://www.facebook.com/NTUstudents">臺大學生會FB粉絲專頁</a><br/><br/>
+      <a href="https://www.facebook.com/JumpintoNTU87thAnniversary">臺大捌柒湊熱鬧-Jump into NTU 87th Anniversary</a><br/><br/>
+      <a href="http://goo.gl/forms/3fHDgmDhCd">我要報名臺大大富翁</a>
+    </div>
+    <div id="right-ad">
+      <p>臺大87週年校慶紀念品手機殼預購:</p>
+      <a href="http://bit.ly/1Lamh5r">活大付款</a>
+      <a href="https://www.blink.com.tw/store/11?p=product">線上付款</a>
+    </div>
+    <div id="ad-logo">
+      <img class="left" src="../source/background/logo_Ceomate.png">
+      <img src="../source/background/CB_logo.png">
       <img src="../source/background/CB_text.png">
     </div>
-  </footer>
+  </main>
   <!--
   <script async type="application/dart" src="../dart/game.dart"></script>
  -->
+ 
   <script async src="../dart/game.dart.js"></script>
-  
+
 </body>
 </html>
