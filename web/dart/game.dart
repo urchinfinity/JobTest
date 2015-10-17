@@ -15,7 +15,6 @@ void main() {
 		listener.cancel();
 		hideStartButton();
 		gameMap.startStory();
-		print('click!');
 	});
 }
 
