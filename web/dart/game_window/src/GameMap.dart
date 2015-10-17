@@ -312,7 +312,7 @@ class GameMap {
 					break;
 				default:
 					timer.cancel();
-					dialog.showContent('什麼有寶箱，根本就只有枯骨＝＝');
+					dialog.showContent('怎麼會有一堆枯骨啊＝＝嚇屎人（汗');
 					return _startMouseListener()
 					.then((_) => cmpl.complete());
 			}
@@ -327,7 +327,7 @@ class GameMap {
 			timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 				switch (curP++) {
 					case 0:
-						dialog.showContent('號外！大安預定地有不得人知的天大過去？！');
+						dialog.showContent('號外！大安預定地有不為人知的天大過去？！');
 						break;
 					case 1:
 						dialog.showContent('１１月９日到１１月２０日在博雅 刮亮臺大 靜態互動展');
@@ -355,7 +355,7 @@ class GameMap {
 			timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
 				switch (curP++) {
 					case 0:
-						dialog.showContent('好康通相報！');
+						dialog.showContent('好康道相報！');
 						break;
 					case 1:
 						dialog.showContent('每週三四五中午都可以去活大237繳學生會費150元');
