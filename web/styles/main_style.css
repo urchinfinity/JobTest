@@ -109,8 +109,8 @@ body {
 	top: 0;
 	padding: 30px;
 
-    transition: all 5s linear;
-    transition-timing-function: linear;
+    transition: all 2s cubic-bezier(0.25,0.1,0.25,1);
+    transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
 }
 
 #map .content p {
