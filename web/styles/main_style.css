@@ -1,13 +1,14 @@
 body {
+	background-color: #000;
 	background-image: url('../source/background/background.jpg');
 	background-size: 105% auto;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center bottom;
 }
 
 #title {
 	text-align: center;
-	padding: 20px;
+	padding-bottom: 20px;
 }
 
 #banner {
@@ -17,10 +18,17 @@ body {
 #logo {
 	display: inline-block;
 	margin-right: 20px;
+	width: 80px;
+	height: 70px;
+
+	background-image: url('../source/background/logo.png');
+	background-size: 150% auto;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #logo img, #banner img {
-	height: 60px;
+	height: 80px;
 	width: auto;
 }
 
@@ -56,7 +64,7 @@ body {
 	height: 550px;
 	margin-left: auto;
 	margin-right: auto;
-	display: inline-block;
+	display: block;
 
 	background-color: #000;
 }
@@ -89,18 +97,27 @@ body {
     filter: blur(20px);    
 }
 
+.ease-in {
+    -webkit-filter: blur(200px);
+    -moz-filter: blur(200px);
+    -ms-filter: blur(200px);    
+    filter: blur(200px);    
+}
+
 #map .content {
 	position: absolute;
 	top: 0;
-
 	padding: 30px;
+
+    transition: all 5s linear;
+    transition-timing-function: linear;
 }
 
 #map .content p {
 	margin: 20px 0px;
 	padding: 0;
 
-	width: 0px;
+	width: 100%;
 	overflow: hidden;
 
 	font-family: DFKai-sb;
@@ -109,11 +126,7 @@ body {
 	color: #000;
 	text-shadow: 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff;
 
-
 	white-space:nowrap;
-
-    transition: all 5s linear;
-    transition-timing-function: linear;
 }
 
 #main_character, #npc {
@@ -226,7 +239,8 @@ audio {
 	font-family: 'Helvetica', Microsoft JhengHei, cursive;
 	font-size: 12pt;
 	color: #fff;
-	padding-top: 5%;
+	padding-top: 3%;
+	padding-bottom: 30px;
 }
 
 #right-ad {
@@ -255,28 +269,47 @@ audio {
 	color: #ffaa33;
 }
 
-
-footer {
-	margin-top: 20px;
-}
-
-footer a, footer p {
-	display: block;
+#start {
+	position: absolute;
+	top: 0px;
 	width: 100%;
-	padding-bottom: 5px;
+	height: 100%;
+}
+
+#start .btn {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    margin-top: 25%;
+	width: 15%;
+	padding: 10px 20px;
+	border: 0px;
+	background-color: #00AA55;
+	border-radius: 5px;
+
+	font-size: 24pt;
+	font-weight: bold;
+	font-family: 'Helvetica';
 	color: #fff;
-	text-align: center;
-	text-decoration: none;
-
-	font-family: Microsoft JhengHei, 'Coming Soon';
-	font-size: 14pt;
 }
 
-footer img {
-	display: inline;
-	height: 30px;
+#start .btn:hover {
+	background-color: #00DD77;
 }
 
-footer p a {
+
+#ad-logo {
+	margin-top: 7%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#ad-logo img {
 	display: inline;
+	height: 40px;
+}
+
+
+#ad-logo .left {
+	margin-left: 20%;
 }

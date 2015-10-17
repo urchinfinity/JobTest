@@ -10,8 +10,12 @@ GameMap gameMap = new GameMap();
 
 void main() {
 	initAudio();
-	new Timer(new Duration(seconds: 1), () {
+	var listener;
+	listener = querySelector('#start').onClick.listen((_) {
+		listener.cancel();
+		hideStartButton();
 		gameMap.startStory();
+		print('click!');
 	});
 }
 
@@ -22,4 +26,8 @@ void initAudio() {
 	  audioBGM = new AudioPlayer(querySelector('#audio-bgm'));
 	  audioAnthem = new AudioPlayer(querySelector('#audio-anthem'));
 	  audioMagic = new AudioPlayer(querySelector('#audio-magic'));
+}
+
+void hideStartButton() {
+	querySelector('#start').classes.add('hidden');
 }

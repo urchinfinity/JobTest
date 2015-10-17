@@ -36,22 +36,30 @@ class GameMap {
 		_backgrounds[0].classes.remove('hidden');
 		audioIntro.play();
 
-		ElementList<ParagraphElement> storyLines = querySelectorAll('#map .content p');
+		DivElement backgroundStory = querySelector('#map .content');
+		backgroundStory.classes.remove('ease-in');
 		int curP = 0;
 		Timer timer;
 
-		storyLines[curP++].style.width = '100%';
 		timer = new Timer.periodic(new Duration(seconds: STORYLINE_DURATION), (_) {
-			if (curP < storyLines.length)
-				storyLines[curP].style.width = '100%';
-			else if (curP == storyLines.length + 1) {
-				_backgrounds[0].classes.add('hidden');
-				querySelector('#map .content').classes.add('hidden');
-				timer.cancel();
-				audioIntro.stop();
-				return cmpl.complete();
+			switch (curP++) {
+				case 0:
+					break;
+				case 1:
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				default:
+					timer.cancel();
+					backgroundStory.classes.add('ease-in');
+					_backgrounds[0].classes.add('hidden');
+					audioIntro.stop();
+					return cmpl.complete();
 			}
-			curP++;
 		});
 		return cmpl.future;
 	}
@@ -60,7 +68,7 @@ class GameMap {
 		Completer cmpl = new Completer();
 		var listener;
 
-		listener = querySelector('#dialog').onClick.listen((e) {
+		listener = querySelector('#game-window').onClick.listen((e) {
 			listener.cancel();
 			dialog.clearDialog();
 			dialog.hideDialog();
@@ -73,6 +81,7 @@ class GameMap {
 		Completer cmpl = new Completer();
 		int curP = 0;
 		Timer timer;
+		querySelector('#map .content').classes.add('hidden');
 		audioMagic.play();
 		audioBGM.play();
 		timer = new Timer.periodic(new Duration(milliseconds: DIALOG_TEXT_DURATION), (_) {
