@@ -109,8 +109,8 @@ body {
 	top: 0;
 	padding: 30px;
 
-    transition: all 5s linear;
-    transition-timing-function: linear;
+    transition: all 2s cubic-bezier(0.25,0.1,0.25,1);
+    transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
 }
 
 #map .content p {
@@ -284,7 +284,7 @@ audio {
 	width: 15%;
 	padding: 10px 20px;
 	border: 0px;
-	background-color: #00AA55;
+	background-color: #ff0000;
 	border-radius: 5px;
 
 	font-size: 24pt;
@@ -294,7 +294,7 @@ audio {
 }
 
 #start .btn:hover {
-	background-color: #00DD77;
+	background-color: #ff7777;
 }
 
 
