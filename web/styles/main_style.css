@@ -56,6 +56,7 @@ body {
 	height: 550px;
 	margin-left: auto;
 	margin-right: auto;
+	display: inline-block;
 
 	background-color: #000;
 }
@@ -222,13 +223,18 @@ audio {
 	margin-right: 1%;
 	display: inline-block;
 	float: left;
-	font-family: Microsoft JhengHei, 'Coming Soon', cursive;
+	font-family: 'Helvetica', Microsoft JhengHei, cursive;
 	font-size: 12pt;
 	color: #fff;
+	padding-top: 5%;
 }
 
 #right-ad {
 	float: right;
+}
+
+#right-ad a {
+	font-size: 11pt;
 }
 
 #left-ad a, #right-ad a {
@@ -264,6 +270,11 @@ footer a, footer p {
 
 	font-family: Microsoft JhengHei, 'Coming Soon';
 	font-size: 14pt;
+}
+
+footer img {
+	display: inline;
+	height: 30px;
 }
 
 footer p a {
