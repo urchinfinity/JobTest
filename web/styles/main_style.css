@@ -284,7 +284,7 @@ audio {
 	width: 15%;
 	padding: 10px 20px;
 	border: 0px;
-	background-color: #00AA55;
+	background-color: #ff0000;
 	border-radius: 5px;
 
 	font-size: 24pt;
@@ -294,7 +294,7 @@ audio {
 }
 
 #start .btn:hover {
-	background-color: #00DD77;
+	background-color: #ff7777;
 }
 
 
