@@ -37,6 +37,7 @@ class GameMap {
 		audioIntro.play();
 
 		DivElement backgroundStory = querySelector('#map .content');
+		backgroundStory.classes.remove('hidden');
 		backgroundStory.classes.remove('ease-in');
 		int curP = 0;
 		Timer timer;
